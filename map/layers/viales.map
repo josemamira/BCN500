@@ -24,6 +24,7 @@ LAYER
     
     
     CLASS
+    	NAME 'Carreteras secundarias'
 
     	STYLE
     		COLOR 0 0 0
@@ -63,6 +64,7 @@ LAYER
     
     
     CLASS
+    	NAME 'Carreteras principales'
 
     	STYLE
     		COLOR 0 0 0
@@ -107,6 +109,7 @@ LAYER
     
     
     CLASS
+    	NAME 'Autopistas'
     	EXPRESSION ('[TIPO_0601]' = '01')
 
     	STYLE
@@ -125,6 +128,7 @@ LAYER
     END
 
     CLASS
+    	NAME 'Autovías'
     	EXPRESSION ('[TIPO_0601]' = '07')
 
     	STYLE
@@ -138,6 +142,7 @@ LAYER
     END
 	# resto
     CLASS
+    	NAME 'Otras autopistas'
     	STYLE
     		COLOR 255 0 0
     		WIDTH 5
