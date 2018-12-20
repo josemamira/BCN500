@@ -24,6 +24,7 @@ LAYER
     
     
     CLASS
+    	NAME 'Presa'
     	STYLE
     		COLOR '#91522d'
     		WIDTH 2
@@ -56,15 +57,17 @@ LAYER
     
     
     CLASS
+    	NAME 'Río de 1o orden'
     	EXPRESSION ('[ID_TTOPO]' = '031101')
     	STYLE
     		COLOR '#87daf7'
     		WIDTH 3
     	END
 	END
-
+    
     CLASS
-    	EXPRESSION ('[ID_TTOPO]' = '031101')
+    	NAME 'Río de 2o orden'
+    	EXPRESSION ('[ID_TTOPO]' = '031102')
     	STYLE
     		COLOR '#87daf7'
     		WIDTH 2
@@ -72,14 +75,7 @@ LAYER
 	END    
     
     CLASS
-    	EXPRESSION ('[ID_TTOPO]' = '031102')
-    	STYLE
-    		COLOR '#87daf7'
-    		WIDTH 1
-    	END
-	END    
-    
-    CLASS
+    	NAME 'Río de 3o orden'
     	EXPRESSION ('[ID_TTOPO]' = '031103')
     	STYLE
     		COLOR '#87daf7'
@@ -88,6 +84,7 @@ LAYER
 	END    
     
     CLASS
+    	NAME 'Río de 4o orden'
     	EXPRESSION ('[ID_TTOPO]' = '031104')
     	STYLE
     		COLOR '#87daf7'
@@ -98,6 +95,7 @@ LAYER
     
     # canal
     CLASS
+    	NAME 'Canal'
     	EXPRESSION ('[ID_TTOPO]' = '031105')
     	STYLE
     		COLOR '#87daf7'
@@ -136,7 +134,7 @@ LAYER
     END     
     
     CLASS
-    	#EXPRESSION ('[ID_TTOPO]' = '031101')
+    	NAME 'Red ferrocarril'
     	STYLE
     		COLOR '#000000'
     		WIDTH 1
