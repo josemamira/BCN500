@@ -1,6 +1,6 @@
-# BCN200
+# BCN500
 
-El objetivo de este proyecto es mostrar las capacidades de MapServer para representar la cartografía del [CNIG](http://centrodedescargas.cnig.es/CentroDescargas/index.jsp) de España.
+El objetivo de este proyecto es mostrar las capacidades de MapServer para representar la cartografía de la BCN500 [CNIG](http://centrodedescargas.cnig.es/CentroDescargas/index.jsp) de España.
 Los  datos están en formato shapefile y son accesibles en esta dirección:
 [Centro de descargas del CNIG](http://centrodedescargas.cnig.es/CentroDescargas/index.jsp) -> Mapas vectoriales y Bases Cartográficas y Topográficas -> BCN500
 
