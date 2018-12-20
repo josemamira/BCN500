@@ -1,0 +1,51 @@
+# GetCapabilities 
+#http://aulageomatica.ua.es:8080/cgi-bin/mapserv?map=/opt/scribeui/workspaces/jose/BCN500/map/BCN500.map&SERVICE=wms&REQUEST=Getcapabilities
+# GetMap
+# http://aulageomatica.ua.es:8080/cgi-bin/mapserv?map=/opt/scribeui/workspaces/jose/BCN500/map/BCN500.map&SERVICE=wms&REQUEST=Getmap&VERSION=1.1.1&LAYERS=default&SRS=epsg:25830&BBOX=661690,4188342,784513,4311726&FORMAT=PNG&WIDTH=600&HEIGHT=600
+
+MAP
+    CONFIG 'ON_MISSING_DATA' 'IGNORE'
+    ##CONFIG "MS_ERRORFILE" "../debugFile.log"
+    CONFIG 'PROJ_LIB' '../'
+    FONTSET '../fonts.lst'
+    IMAGETYPE png
+    MAXSIZE 4000
+    SIZE 800 800
+    UNITS meters
+    EXTENT -2084755.5836575 2976628.6329378 649649.52749709 5539393.59642251
+    IMAGECOLOR '#C6E2F2'
+    SHAPEPATH '../data/'
+    WEB
+   
+        METADATA
+    		"wms_feature_info_mime_type" "text/html"
+            "labelcache_map_edge_buffer" "-10"
+            "wms_title" "BCN500"   
+            "ows_enable_request" "*"
+            "wms_srs" "EPSG:4326 EPSG:4230 EPSG:4258 EPSG:900913 EPSG:3857 EPSG:25830 EPSG:25831"
+            "labelcache_map_edge_buffer" "-10"
+            "wms_title" "BCN500"
+    		"wms_abstract" "Ejemplo de uso de la semiologia cartografica para la BCN 500 del IGN"  
+        	"wms_contactperson"	"JOSE MANUEL MIRA MARTINEZ"
+    		"wms_contactorganization"	"Universidad de Alicante"
+    		"wms_onlineresource"  "http://aulageomatica.ua.es:8080/cgi-bin/mapserv?map=/opt/scribeui/workspaces/jose/BCN500/map/BCN500.map"     
+    
+    	END
+        IMAGEPATH '/tmp/'
+        IMAGEURL '/ms_tmp/'    
+    
+    END
+    DEBUG 5
+    PROJECTION
+        "init=epsg:900913"
+    END
+    
+    INCLUDE '../symbols.map'
+    
+    INCLUDE 'layers/default.map'
+    INCLUDE 'layers/poligonos.map'
+    INCLUDE 'layers/lineas.map'
+    INCLUDE 'layers/viales.map'
+    INCLUDE 'layers/puntos.map'
+    INCLUDE 'layers/toponimos.map'
+END

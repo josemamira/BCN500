@@ -1,0 +1,1400 @@
+#-------------------
+LAYER
+    NAME 'VERTGEO_LABEL'
+    TYPE POINT
+    TEMPLATE 'blank.html'
+    GROUP 'default'
+    STATUS ON
+    PROJECTION
+    	'init=epsg:4326'
+    END    
+    PROCESSING 'LABEL_NO_CLIP=ON'
+    PROCESSING 'CLOSE_CONNECTION=DEFER'
+    DATA 'P_VERT_GEODESICO'  
+    MAXSCALEDENOM 1048576
+
+    METADATA
+      "wms_title"           "Toponimos_vertices_geodesicos"
+      "wms_abstract"        "Toponimos vertices geodesicos de Espana" 
+      "gml_include_items"   "all"
+      "wms_include_items"   "all"
+      "wms_srs"             "EPSG:4258"
+      "wms_enable_request"  "*"   
+    END        
+    
+    
+	# Vértice principal (Vértice 1)
+    CLASS
+    	EXPRESSION ('[TIPO_1001]' = '01')
+            
+    	LABEL
+            TEXT '[ETIQUETA] [COTA]'
+  			COLOR  		 0 0 0   	
+  			OUTLINECOLOR 255 255 255
+    		OUTLINEWIDTH 1    	
+  			FONT "sc"
+ 			TYPE truetype
+  			SIZE 7
+  			POSITION UR
+  			PARTIALS FALSE
+    		ANGLE FOLLOW
+            WRAP ' '
+      	END
+	END
+
+	# Vértice secundario (Vértice 2)
+    CLASS
+    	EXPRESSION ('[TIPO_1001]' = '04')
+            
+    	LABEL
+            TEXT '[COTA]'
+  			COLOR  		 0 0 0   	
+  			OUTLINECOLOR 255 255 255
+    		OUTLINEWIDTH 1    	
+  			FONT "sc"
+ 			TYPE truetype
+  			SIZE 6
+  			POSITION UR
+  			PARTIALS FALSE
+    		ANGLE FOLLOW
+            WRAP ' '
+      	END
+	END            
+            
+END
+    
+    
+#---------------------
+LAYER
+    NAME 'VIAS_PPAL_LABEL'
+    TYPE LINE
+    TEMPLATE 'blank.html'
+    GROUP 'default'
+    STATUS ON
+    PROJECTION
+    	'init=epsg:4326'
+    END    
+    PROCESSING 'LABEL_NO_CLIP=ON'
+    PROCESSING 'CLOSE_CONNECTION=DEFER'
+    DATA 'L_CARRETERA_PPAL'
+    LABELITEM 'ETIQUETA'
+    MAXSCALEDENOM 524288 # nivel 10
+
+    METADATA
+      "wms_title"           "Toponimos_red_viaria"
+      "wms_abstract"        "Toponimos red viaria de España" 
+      "gml_include_items"   "all"
+      "wms_include_items"   "all"
+      "wms_srs"             "EPSG:4258"
+      "wms_enable_request"  "*"   
+    END       
+    
+    
+    
+    CLASS
+      LABEL
+    	TYPE TRUETYPE 
+	    FONT sans 
+	    PARTIALS FALSE 
+	    OUTLINEWIDTH 3
+        PRIORITY 1
+        FONT scb 
+        SIZE 8
+    	POSITION CC
+        MINDISTANCE 150
+        MAXLENGTH 6
+        COLOR 255 255 255
+        STYLE # antiguo BACKGROUNDSHADOWCOLOR
+           GEOMTRANSFORM 'labelpoly'
+           COLOR 200 200 200
+           OFFSET 3 2
+        END
+        STYLE # antiguo BACKGROUNDCOLOR
+           GEOMTRANSFORM 'labelpoly'
+           COLOR 255 0 0
+        END
+      END    
+    
+    END
+END     
+    
+#---------------------
+LAYER
+    NAME 'VIAS_AUTOPISTA_LABEL'
+    TYPE LINE
+    TEMPLATE 'blank.html'
+    GROUP 'default'
+    STATUS ON
+    PROJECTION
+    	'init=epsg:4326'
+    END    
+    PROCESSING 'LABEL_NO_CLIP=ON'
+    PROCESSING 'CLOSE_CONNECTION=DEFER'
+    DATA 'L_AUTOP_AUTOV'
+    LABELITEM 'ETIQUETA'
+    MAXSCALEDENOM 524288 # nivel 10
+
+    METADATA
+      "wms_title"           "Toponimos_autopistas"
+      "wms_abstract"        "Toponimos autopistas/autovias de Espana" 
+      "gml_include_items"   "all"
+      "wms_include_items"   "all"
+      "wms_srs"             "EPSG:4258"
+      "wms_enable_request"  "*"   
+    END       
+    
+    
+    CLASS
+    	EXPRESSION ('[TIPO_0601]' = '01' OR '[TIPO_0601]' = '07')
+       	LABEL
+    		TYPE TRUETYPE 
+	    	FONT sans 
+	   	 	PARTIALS FALSE 
+	    	OUTLINEWIDTH 3
+        	PRIORITY 1
+        	FONT scb 
+        	SIZE 8
+    		POSITION CC
+        	MINDISTANCE 150
+        	MAXLENGTH 6
+        	COLOR 255 255 255
+        	STYLE # antiguo BACKGROUNDSHADOWCOLOR
+           		GEOMTRANSFORM 'labelpoly'
+           		COLOR 200 200 200
+           		OFFSET 3 2
+        	END
+        	STYLE # antiguo BACKGROUNDCOLOR
+           		GEOMTRANSFORM 'labelpoly'
+           		COLOR '#2ba8fb'
+        	END
+      	END    
+    
+    END    
+    
+END        
+    
+#-----------------------------
+LAYER
+    NAME 'ACC_COSTA_LABEL'
+    TYPE POINT
+    TEMPLATE 'blank.html'
+    GROUP 'default'
+    STATUS ON
+    PROJECTION
+    	'init=epsg:4258'
+    END    
+    PROCESSING 'LABEL_NO_CLIP=ON'
+    PROCESSING 'CLOSE_CONNECTION=DEFER'
+    DATA 'P_EV_ACC_COSTA'
+    LABELITEM 'ETIQUETA'
+    MAXSCALEDENOM 1048576
+    
+    METADATA
+      "wms_title"           "Toponimos_accidentes_costeros"
+      "wms_abstract"        "Toponimos accidentes costeros de Espana" 
+      "gml_include_items"   "all"
+      "wms_include_items"   "all"
+      "wms_srs"             "EPSG:4258"
+      "wms_enable_request"  "*"   
+    END   
+    
+    # Accidentes costeros de 1o orden
+    CLASS
+    	EXPRESSION ('[ID_TTOPO]' = '022101')
+    	LABEL
+  			COLOR  		 '#37a6ff'   	
+  			OUTLINECOLOR 255 255 255
+    		OUTLINEWIDTH 1    	
+  			FONT "z_ltcn"
+ 			TYPE truetype
+  			SIZE 8
+  			POSITION AUTO
+  			PARTIALS FALSE
+    		ANGLE FOLLOW
+      	END
+	END
+
+	# Accidentes costeros 2o orden
+    CLASS
+    	EXPRESSION ('[ID_TTOPO]' = '022102')
+    	LABEL
+  			COLOR  		 '#37a6ff'   	
+  			OUTLINECOLOR 255 255 255
+    		OUTLINEWIDTH 1    	
+  			FONT "z_ltcn"
+ 			TYPE truetype
+  			SIZE 8
+  			POSITION AUTO
+  			PARTIALS FALSE
+    		ANGLE FOLLOW
+      	END
+	END    
+    
+	# Accidentes costeros de 3o orden
+    CLASS
+    	EXPRESSION ('[ID_TTOPO]' = '022103')
+    	LABEL
+  			COLOR  		 '#37a6ff'   	
+  			OUTLINECOLOR 255 255 255
+    		OUTLINEWIDTH 1    	
+  			FONT "z_ltcn"
+ 			TYPE truetype
+  			SIZE 7
+  			POSITION AUTO
+  			PARTIALS FALSE
+    		ANGLE FOLLOW
+      	END
+	END 
+
+
+ 
+END  
+#-----------------------------
+LAYER
+    NAME 'PICO_PUERTO_LABEL'
+    TYPE POINT
+    TEMPLATE 'blank.html'
+    GROUP 'default'
+    STATUS ON
+    PROJECTION
+    	'init=epsg:4326'
+    END    
+    PROCESSING 'LABEL_NO_CLIP=ON'
+    PROCESSING 'CLOSE_CONNECTION=DEFER'
+    DATA 'P_PICO_PUERTO'  
+    MAXSCALEDENOM 1048576
+    LABELITEM 'ETIQUETA'
+
+    METADATA
+      "wms_title"           "Toponimos_picos_puertos"
+      "wms_abstract"        "Toponimos picos y puertos de Espana" 
+      "gml_include_items"   "all"
+      "wms_include_items"   "all"
+      "wms_srs"             "EPSG:4258"
+      "wms_enable_request"  "*"   
+    END       
+    
+    
+    
+    #Pico principal (Pico 1)
+    CLASS
+    	EXPRESSION ( '[ID_TTOPO]'  =  '021201' )
+        LABEL
+    		TEXT  '[ETIQUETA] [COTA]'
+  			COLOR  0 0 0
+  			OUTLINECOLOR 255 255 255
+  			FONT 'z_ltcn'
+ 			TYPE truetype
+  			SIZE 9
+  			POSITION UR
+  			PARTIALS FALSE
+    		OFFSET 3 3
+        END   
+	END
+    # Pico restante (Pico 2)
+    CLASS
+    	EXPRESSION ( '[ID_TTOPO]'  =  '021202' )
+        LABEL
+    		TEXT  '[ETIQUETA] [COTA]'
+  			COLOR  0 0 0
+  			OUTLINECOLOR 255 255 255
+  			FONT 'z_ltcn'
+ 			TYPE truetype
+  			SIZE 8
+  			POSITION UR
+  			PARTIALS FALSE
+    		OFFSET 3 3
+        END   
+	END
+    # Puerto de montaña
+    CLASS
+    	EXPRESSION ( '[ID_TTOPO]'  =  '021203' )
+        LABEL
+    		TEXT  '[ETIQUETA] [COTA]' 
+  			COLOR  0 0 0
+  			OUTLINECOLOR 255 255 255
+  			FONT 'z_ltcn'
+ 			TYPE truetype
+  			SIZE 8
+  			POSITION UR
+  			PARTIALS FALSE
+    		OFFSET 3 3
+        END   
+	END
+    # Cota altimétrica (Cota)
+    CLASS
+    	EXPRESSION ( '[ID_TTOPO]'  =  '021204' )
+        LABEL
+    		TEXT '[COTA]'
+  			COLOR  0 0 0
+  			OUTLINECOLOR 255 255 255
+  			FONT 'z_ltcn'
+ 			TYPE truetype
+  			SIZE 7
+  			POSITION UR
+  			PARTIALS FALSE
+    		OFFSET 3 3
+        END   
+	END
+    
+END
+#-----------------------------
+LAYER
+    NAME 'LUGAR_INTERES_LABEL'
+    TYPE POINT
+    TEMPLATE 'blank.html'
+    GROUP 'default'
+    STATUS ON
+    PROJECTION
+    	'init=epsg:4326'
+    END    
+    PROCESSING 'LABEL_NO_CLIP=ON'
+    PROCESSING 'CLOSE_CONNECTION=DEFER'
+    DATA 'P_LUGAR_INTERES'  
+    MAXSCALEDENOM 1048576
+    LABELITEM 'ETIQUETA'
+
+    METADATA
+      "wms_title"           "Toponimos_lugares_interes"
+      "wms_abstract"        "Toponimos lugares de interes de Espana" 
+      "gml_include_items"   "all"
+      "wms_include_items"   "all"
+      "wms_srs"             "EPSG:4258"
+      "wms_enable_request"  "*"   
+    END       
+    
+    CLASS
+        LABEL
+  			COLOR  0 0 0
+  			OUTLINECOLOR 255 255 255
+  			FONT "arialn"
+ 			TYPE truetype
+  			SIZE 8
+  			POSITION UR
+  			PARTIALS FALSE
+    		OFFSET 3 3
+        END   
+	END
+END   
+#--------------------------------    
+    
+LAYER
+    NAME 'RIO_LABEL'
+    TYPE LINE
+    TEMPLATE 'blank.html'
+    GROUP 'default'
+    STATUS ON
+    PROJECTION
+    	'init=epsg:4258'
+    END    
+    PROCESSING 'LABEL_NO_CLIP=ON'
+    PROCESSING 'CLOSE_CONNECTION=DEFER'
+    DATA 'L_HIDROGRAFIA'
+    LABELITEM 'ETIQUETA'
+    MAXSCALEDENOM 1048576
+
+    METADATA
+      "wms_title"           "Toponimos_hidrografia_lineal"
+      "wms_abstract"        "Toponimos rios, ramblas y canales de Espana" 
+      "gml_include_items"   "all"
+      "wms_include_items"   "all"
+      "wms_srs"             "EPSG:4258"
+      "wms_enable_request"  "*"   
+    END       
+    
+    
+	# Río de 1o orden
+    CLASS
+    	EXPRESSION ('[ID_TTOPO]' = '031101')
+    	LABEL
+  			COLOR  		 '#37a6ff'   	
+  			OUTLINECOLOR 255 255 255
+    		OUTLINEWIDTH 1    	
+  			FONT "z_ltcn"
+ 			TYPE truetype
+  			SIZE 10
+  			POSITION AUTO
+  			PARTIALS FALSE
+    		ANGLE FOLLOW
+      	END
+	END
+
+	# Río de 2o orden
+    CLASS
+    	EXPRESSION ('[ID_TTOPO]' = '031102')
+    	LABEL
+  			COLOR  		 '#37a6ff'   	
+  			OUTLINECOLOR 255 255 255
+    		OUTLINEWIDTH 1    	
+  			FONT "z_ltcn"
+ 			TYPE truetype
+  			SIZE 9
+  			POSITION AUTO
+  			PARTIALS FALSE
+    		ANGLE FOLLOW
+      	END
+	END    
+    
+	# Río de 3o orden
+    CLASS
+    	EXPRESSION ('[ID_TTOPO]' = '031103')
+        MAXSCALEDENOM 524288 # nivel 10
+    	LABEL
+  			COLOR  		 '#37a6ff'   	
+  			OUTLINECOLOR 255 255 255
+    		OUTLINEWIDTH 1    	
+  			FONT "z_ltcn"
+ 			TYPE truetype
+  			SIZE 8
+  			POSITION AUTO
+  			PARTIALS FALSE
+    		ANGLE FOLLOW
+      	END
+	END 
+
+	# Río de 4o orden
+    CLASS
+    	MAXSCALEDENOM 524288 # nivel 10
+    	EXPRESSION ('[ID_TTOPO]' = '031104')
+    	LABEL
+  			COLOR  		 '#37a6ff'   	
+  			OUTLINECOLOR 255 255 255
+    		OUTLINEWIDTH 1    	
+  			FONT "z_ltcn"
+ 			TYPE truetype
+  			SIZE 7
+  			POSITION AUTO
+  			PARTIALS FALSE
+    		ANGLE FOLLOW
+      	END
+	END     
+
+	# Canal
+    CLASS
+    	MAXSCALEDENOM 524288 # nivel 10
+    	EXPRESSION ('[ID_TTOPO]' = '031105')
+    	LABEL    		
+  			COLOR  		 '#37a6ff'   	
+  			OUTLINECOLOR 255 255 255
+    		OUTLINEWIDTH 1    	
+  			FONT "z_ltcn"
+ 			TYPE truetype
+  			SIZE 7
+  			POSITION AUTO
+  			PARTIALS FALSE
+    		ANGLE FOLLOW
+      	END
+	END
+ 
+END    
+    
+#-----------------------------
+LAYER
+    NAME 'SIERRA_LABEL'
+    TYPE LINE
+    TEMPLATE 'blank.html'
+    GROUP 'default'
+    STATUS ON
+    PROJECTION
+    	'init=epsg:4258'
+    END    
+    PROCESSING 'LABEL_NO_CLIP=ON'
+    PROCESSING 'CLOSE_CONNECTION=DEFER'
+    DATA 'L_EV_SIERRA'
+    LABELITEM 'ETIQUETA'
+    MAXSCALEDENOM 1048576
+
+    METADATA
+      "wms_title"           "Toponimos_accidentes_topográficos"
+      "wms_abstract"        "Toponimos accidentes topograficos de Espana" 
+      "gml_include_items"   "all"
+      "wms_include_items"   "all"
+      "wms_srs"             "EPSG:4258"
+      "wms_enable_request"  "*"   
+    END       
+    
+	# Sierra de 1o orden
+    CLASS
+    	EXPRESSION ('[ID_TTOPO]' = '021101')
+    	LABEL
+    		PRIORITY 1
+  			COLOR  		 '#ca6200'   	
+  			OUTLINECOLOR 255 255 255
+    		OUTLINEWIDTH 1    	
+  			FONT "z_ltcn"
+ 			TYPE truetype
+  			SIZE 16
+  			POSITION AUTO
+  			PARTIALS FALSE
+    		ANGLE FOLLOW
+      	END
+	END
+
+	# Sierra de 2o orden
+    CLASS
+    	EXPRESSION ('[ID_TTOPO]' = '021102')
+    	LABEL
+  			COLOR  		 '#ca6200'   	
+  			OUTLINECOLOR 255 255 255
+    		OUTLINEWIDTH 1    	
+  			FONT "z_ltcn"
+ 			TYPE truetype
+  			SIZE 10
+  			POSITION AUTO
+  			PARTIALS FALSE
+    		ANGLE FOLLOW
+      	END
+	END 
+    
+	# Sierra de 3o orden
+    CLASS
+    	EXPRESSION ('[ID_TTOPO]' = '021103')
+    	LABEL
+  			COLOR  		 '#ca6200'   	
+  			OUTLINECOLOR 255 255 255
+    		OUTLINEWIDTH 1    	
+  			FONT "z_ltcn"
+ 			TYPE truetype
+  			SIZE 8
+  			POSITION AUTO
+  			PARTIALS FALSE
+    		ANGLE FOLLOW
+      	END
+	END    
+
+	# Sierra de 4o orden
+    CLASS
+    	EXPRESSION ('[ID_TTOPO]' = '021104')
+    	LABEL
+  			COLOR  		 '#ca6200'   	
+  			OUTLINECOLOR 255 255 255
+    		OUTLINEWIDTH 1    	
+  			FONT "z_ltcn"
+ 			TYPE truetype
+  			SIZE 7
+  			POSITION AUTO
+  			PARTIALS FALSE
+    		ANGLE FOLLOW
+      	END
+	END    
+    
+END  #FIN CAPA    
+
+    
+#-----------------------------
+LAYER
+    NAME 'ISLA_LABEL'
+    TYPE LINE
+    TEMPLATE 'blank.html'
+    GROUP 'default'
+    STATUS ON
+    PROJECTION
+    	'init=epsg:4258'
+    END    
+    PROCESSING 'LABEL_NO_CLIP=ON'
+    PROCESSING 'CLOSE_CONNECTION=DEFER'
+    DATA 'L_EV_ISLA'
+    LABELITEM 'ETIQUETA'
+    MAXSCALEDENOM 1048576
+
+    METADATA
+      "wms_title"           "Toponimos_islas"
+      "wms_abstract"        "Toponimos islas de Espana" 
+      "gml_include_items"   "all"
+      "wms_include_items"   "all"
+      "wms_srs"             "EPSG:4258"
+      "wms_enable_request"  "*"   
+    END       
+    
+	# Isla de 1o orden
+    CLASS
+    	EXPRESSION ('[ID_TTOPO]' = '022201')
+    	LABEL
+  			COLOR  		 '#ca6200'   	
+  			OUTLINECOLOR 255 255 255
+    		OUTLINEWIDTH 1    	
+  			FONT "z_ltcn"
+ 			TYPE truetype
+  			SIZE 17
+  			POSITION AUTO
+  			PARTIALS FALSE
+    		ANGLE FOLLOW
+      	END
+	END
+
+	# Isla de 2o orden
+    CLASS
+    	EXPRESSION ('[ID_TTOPO]' = '022202')
+    	LABEL
+  			COLOR  		 '#ca6200'   	
+  			OUTLINECOLOR 255 255 255
+    		OUTLINEWIDTH 1    	
+  			FONT "sc"
+ 			TYPE truetype
+  			SIZE 8
+  			POSITION AUTO
+  			PARTIALS FALSE
+    		ANGLE FOLLOW
+      	END
+	END 
+    
+	# Isla de 3o orden
+    CLASS
+    	EXPRESSION ('[ID_TTOPO]' = '022203')
+    	LABEL
+  			COLOR  		 '#ca6200'   	
+  			OUTLINECOLOR 255 255 255
+    		OUTLINEWIDTH 1    	
+  			FONT "z_ltcn"
+ 			TYPE truetype
+  			SIZE 7
+  			POSITION AUTO
+  			PARTIALS FALSE
+    		ANGLE FOLLOW
+      	END
+	END    
+
+    
+END  #FIN CAPA      
+#-----------------------------
+LAYER
+    NAME 'POBLACION_LABEL'
+    TYPE POINT
+    TEMPLATE 'blank.html'
+    GROUP 'default'
+    STATUS ON
+    PROJECTION
+    	'init=epsg:4326'
+    END    
+    PROCESSING 'LABEL_NO_CLIP=ON'
+    PROCESSING 'CLOSE_CONNECTION=DEFER'
+    DATA 'P_POBLACION'  
+    MAXSCALEDENOM 1048576
+    LABELITEM 'ETIQUETA'
+
+    METADATA
+      "wms_title"           "Toponimos_poblaciones_point"
+      "wms_abstract"        "Toponimos poblaciones de Espana" 
+      "gml_include_items"   "all"
+      "wms_include_items"   "all"
+      "wms_srs"             "EPSG:4258"
+      "wms_enable_request"  "*"   
+    END       
+    
+    CLASS
+        LABEL
+  			COLOR  0 0 0
+  			OUTLINECOLOR 255 255 255
+  			FONT "arialn"
+ 			TYPE truetype
+  			SIZE 8
+  			POSITION UR
+  			PARTIALS FALSE
+    		OFFSET 3 3
+    		WRAP '/'
+        END   
+	END
+END
+
+    
+#-----------------------------
+LAYER
+    NAME 'AREA_GEO_LABEL'
+    TYPE LINE
+    TEMPLATE 'blank.html'
+    GROUP 'default'
+    STATUS ON
+    PROJECTION
+    	'init=epsg:4258'
+    END    
+    PROCESSING 'LABEL_NO_CLIP=ON'
+    PROCESSING 'CLOSE_CONNECTION=DEFER'
+    DATA 'L_EV_AREA_GEOGRAF'
+    LABELITEM 'ETIQUETA'
+    MAXSCALEDENOM 4194304
+
+    METADATA
+      "wms_title"           "Toponimos_zonas_geograficas"
+      "wms_abstract"        "Toponimos zonas geograficas de Espana" 
+      "gml_include_items"   "all"
+      "wms_include_items"   "all"
+      "wms_srs"             "EPSG:4258"
+      "wms_enable_request"  "*"   
+    END       
+    
+    
+	# Área geográfica de 1o orden
+    CLASS
+    	EXPRESSION ('[ID_TTOPO]' = '021301')
+    	LABEL
+  			COLOR  		 100 100 100   	
+  			OUTLINECOLOR 255 255 255
+    		OUTLINEWIDTH 1    	
+  			FONT "caslon-bd"
+ 			TYPE truetype
+  			SIZE 16
+  			POSITION AUTO
+  			PARTIALS FALSE
+    		ANGLE FOLLOW
+      	END
+	END
+    
+	# Área geográfica de 2o orden
+    CLASS
+    	EXPRESSION ('[ID_TTOPO]' = '021302')
+    	LABEL
+  			COLOR  		100 100 100   	
+  			OUTLINECOLOR 255 255 255
+    		OUTLINEWIDTH 1    	
+  			FONT "caslon-bd"
+ 			TYPE truetype
+  			SIZE 10
+  			POSITION AUTO
+  			PARTIALS FALSE
+    		ANGLE FOLLOW
+      	END
+	END    
+    
+	# Área geográfica de 3o orden
+    CLASS
+    	EXPRESSION ('[ID_TTOPO]' = '021303')
+    	LABEL
+  			COLOR  		 100 100 100  	
+  			OUTLINECOLOR 255 255 255
+    		OUTLINEWIDTH 1    	
+  			FONT "caslon-bd"
+ 			TYPE truetype
+  			SIZE 7
+  			POSITION AUTO
+  			PARTIALS FALSE
+    		ANGLE FOLLOW
+      	END
+	END    
+    
+  
+END # FIN CAPA
+
+#---------------------------------    
+LAYER
+    NAME 'PROV_LABEL'
+    TYPE POLYGON
+    TEMPLATE 'blank.html'
+    GROUP 'default'
+    STATUS ON
+    PROJECTION
+    	'init=epsg:4258'
+    END    
+    PROCESSING 'LABEL_NO_CLIP=ON'
+    PROCESSING 'CLOSE_CONNECTION=DEFER'
+    DATA 'L_LIMITE_ADM'
+    LABELITEM "ETIQUETA" 
+    MAXSCALEDENOM 8388608
+
+    METADATA
+      "wms_title"           "toponimos_provincias"
+      "wms_abstract"        "Toponimos provincias de Espana" 
+      "gml_include_items"   "all"
+      "wms_include_items"   "all"
+      "wms_srs"             "EPSG:4258"
+      "wms_enable_request"  "*"   
+    END     
+    
+    
+    CLASS
+    	EXPRESSION ('[TIPO_0101]'='01')
+        LABEL
+  			COLOR  0 0 0
+  			OUTLINECOLOR 255 255 255
+  			FONT "sc"
+ 			TYPE truetype
+  			SIZE 20
+  			POSITION AUTO
+  			PARTIALS FALSE
+        END   
+	END
+    
+    CLASS
+    	EXPRESSION ('[TIPO_0101]'='03')
+        LABEL
+  			COLOR  0 0 0
+  			OUTLINECOLOR 255 255 255
+  			FONT "sc"
+ 			TYPE truetype
+  			SIZE 10
+  			POSITION AUTO
+  			PARTIALS FALSE
+        END   
+	END 
+    
+END
+#-----------------------------
+LAYER
+    NAME 'ISLA_LABEL'
+    TYPE POLYGON
+    TEMPLATE 'blank.html'
+    GROUP 'default'
+    STATUS ON
+    PROJECTION
+    	'init=epsg:4258'
+    END    
+    PROCESSING 'LABEL_NO_CLIP=ON'
+    PROCESSING 'CLOSE_CONNECTION=DEFER'
+    DATA 'S_ISLA'
+    LABELITEM "ETIQUETA" 
+    MAXSCALEDENOM 1048576
+
+    METADATA
+      "wms_title"           "Toponimos_islas_superficie"
+      "wms_abstract"        "Toponimos islas superficie de Espana" 
+      "gml_include_items"   "all"
+      "wms_include_items"   "all"
+      "wms_srs"             "EPSG:4258"
+      "wms_enable_request"  "*"   
+    END       
+    
+    # Isla de 1o orden
+    CLASS
+    	EXPRESSION ('[ID_TTOPO]'='022201')  
+        LABEL
+  			COLOR  0 0 0
+  			OUTLINECOLOR 255 255 255
+  			FONT "sc"
+ 			TYPE truetype
+  			SIZE 17
+  			POSITION AUTO
+  			PARTIALS FALSE
+        END   
+	END
+	# Isla de 2 orden    
+    CLASS
+    	EXPRESSION ('[ID_TTOPO]'='022202')
+        LABEL
+  			COLOR  0 0 0
+  			OUTLINECOLOR 255 255 255
+  			FONT "sc"
+ 			TYPE truetype
+  			SIZE 7
+  			POSITION AUTO
+  			PARTIALS FALSE
+        END   
+	END 
+	# Isla de 3 orden    
+    CLASS
+    	EXPRESSION ('[ID_TTOPO]'='022203')
+        LABEL
+  			COLOR  0 0 0
+  			OUTLINECOLOR 255 255 255
+  			FONT "sc"
+ 			TYPE truetype
+  			SIZE 6
+  			POSITION AUTO
+  			PARTIALS FALSE
+        END   
+	END    
+END    
+    
+    
+#-----------------------------
+LAYER
+    NAME 'ACC_COSTA_LABEL'
+    TYPE LINE
+    TEMPLATE 'blank.html'
+    GROUP 'default'
+    STATUS ON
+    PROJECTION
+    	'init=epsg:4258'
+    END    
+    PROCESSING 'LABEL_NO_CLIP=ON'
+    PROCESSING 'CLOSE_CONNECTION=DEFER'
+    DATA 'L_EV_ACC_COSTA'
+    LABELITEM 'ETIQUETA'
+    MAXSCALEDENOM 1048576
+
+    METADATA
+      "wms_title"           "Toponimos_playas_cabos_bahias"
+      "wms_abstract"        "Toponimos playas, cabos y bahias de Espana" 
+      "gml_include_items"   "all"
+      "wms_include_items"   "all"
+      "wms_srs"             "EPSG:4258"
+      "wms_enable_request"  "*"   
+    END       
+    
+    
+	# Cabo principal (Cabo 1)
+    CLASS
+    	EXPRESSION ('[ID_TTOPO]' = '022101')
+    	LABEL
+  			COLOR  		 0 0 0   	
+  			OUTLINECOLOR 255 255 255
+    		OUTLINEWIDTH 1    	
+  			FONT "z_ltcn"
+ 			TYPE truetype
+  			SIZE 7
+  			POSITION AUTO
+  			PARTIALS FALSE
+    		ANGLE FOLLOW
+      	END
+	END
+    
+
+	# Cabo restante (Cabo 2)
+    CLASS
+    	EXPRESSION ('[ID_TTOPO]' = '022102')
+    	LABEL
+  			COLOR  		 0 0 0   	
+  			OUTLINECOLOR 255 255 255
+    		OUTLINEWIDTH 1    	
+  			FONT "z_ltcn"
+ 			TYPE truetype
+  			SIZE 6
+  			POSITION AUTO
+  			PARTIALS FALSE
+    		ANGLE FOLLOW
+      	END
+	END
+    
+    
+	# Playa y otros accidentes costeros (Playa)
+    CLASS
+    	EXPRESSION ('[ID_TTOPO]' = '022103')
+    	LABEL
+  			COLOR  		 0 0 0   	
+  			OUTLINECOLOR 255 255 255
+    		OUTLINEWIDTH 1    	
+  			FONT "z_ltcn"
+ 			TYPE truetype
+  			SIZE 6
+  			POSITION AUTO
+  			PARTIALS FALSE
+    		ANGLE FOLLOW
+      	END
+	END    
+    
+    
+    
+END # FIN CAPA    
+#--------------------------------    
+LAYER
+    NAME 'MAR_LABEL'
+    TYPE LINE
+    TEMPLATE 'blank.html'
+    GROUP 'default'
+    STATUS ON
+    PROJECTION
+    	'init=epsg:4258'
+    END    
+    PROCESSING 'LABEL_NO_CLIP=ON'
+    PROCESSING 'CLOSE_CONNECTION=DEFER'
+    DATA 'L_EV_HID_MAR_COS'
+    LABELITEM 'ETIQUETA'
+    MAXSCALEDENOM 1048576
+    
+    METADATA
+      "wms_title"           "Toponimos_mares_oceanos"
+      "wms_abstract"        "Toponimos mares y oceanos de Espana" 
+      "gml_include_items"   "all"
+      "wms_include_items"   "all"
+      "wms_srs"             "EPSG:4258"
+      "wms_enable_request"  "*"   
+    END       
+    
+    
+	# Mar de 2o orden y estrecho marítimo
+    CLASS
+    	EXPRESSION ('[ID_TTOPO]' = '032101')
+    	LABEL
+  			COLOR  		 '#1f78b4'   	
+  			OUTLINECOLOR 255 255 255
+    		OUTLINEWIDTH 1    	
+  			FONT "bodoni"
+ 			TYPE truetype
+  			SIZE 24
+  			POSITION AUTO
+  			PARTIALS FALSE
+    		ANGLE FOLLOW
+      	END
+	END
+
+	# Mar de 3o orden y estrecho marítimo
+    CLASS
+    	EXPRESSION ('[ID_TTOPO]' = '032102')
+    	LABEL
+  			COLOR  		 '#1f78b4'   	
+  			OUTLINECOLOR 255 255 255
+    		OUTLINEWIDTH 1    	
+  			FONT "bodoni"
+ 			TYPE truetype
+  			SIZE 14
+  			POSITION AUTO
+  			PARTIALS FALSE
+    		ANGLE FOLLOW
+      	END
+	END
+    
+	# Oceano
+    CLASS
+    	EXPRESSION ('[ID_TTOPO]' = '032103')
+    	LABEL
+  			COLOR  		 '#1f78b4'   	
+  			OUTLINECOLOR 255 255 255
+    		OUTLINEWIDTH 1    	
+  			FONT "bodoni"
+ 			TYPE truetype
+  			SIZE 7
+  			POSITION AUTO
+  			PARTIALS FALSE
+    		ANGLE FOLLOW
+      	END
+	END   
+
+	# Entrante costero de 1 er orden(Golfo 1)
+    CLASS
+    	EXPRESSION ('[ID_TTOPO]' = '032201')
+    	LABEL
+  			COLOR  		 '#1f78b4'   	
+  			OUTLINECOLOR 255 255 255
+    		OUTLINEWIDTH 1    	
+  			FONT "bodoni"
+ 			TYPE truetype
+  			SIZE 8
+  			POSITION AUTO
+  			PARTIALS FALSE
+    		ANGLE FOLLOW
+      	END
+	END 
+
+	# Entrante costero de 2o orden (Golfo 2)
+    CLASS
+    	EXPRESSION ('[ID_TTOPO]' = '032202')
+    	LABEL
+  			COLOR  		 '#1f78b4'   	
+  			OUTLINECOLOR 255 255 255
+    		OUTLINEWIDTH 1    	
+  			FONT "bodoni"
+ 			TYPE truetype
+  			SIZE 6
+  			POSITION AUTO
+  			PARTIALS FALSE
+    		ANGLE FOLLOW
+      	END
+	END     
+
+	# Entrante costero de 3 er orden (Golfo 3)
+    CLASS
+    	EXPRESSION ('[ID_TTOPO]' = '032203')
+    	LABEL
+  			COLOR  		 '#1f78b4'   	
+  			OUTLINECOLOR 255 255 255
+    		OUTLINEWIDTH 1    	
+  			FONT "bodoni"
+ 			TYPE truetype
+  			SIZE 6
+  			POSITION AUTO
+  			PARTIALS FALSE
+    		ANGLE FOLLOW
+      	END
+	END     
+    
+END  #FIN CAPA
+
+    
+#-----------------------------
+LAYER
+    NAME 'PN_LABEL'
+    TYPE POLYGON
+    TEMPLATE 'blank.html'
+    GROUP 'default'
+    STATUS ON
+    PROJECTION
+    	'init=epsg:4258'
+    END    
+    PROCESSING 'LABEL_NO_CLIP=ON'
+    PROCESSING 'CLOSE_CONNECTION=DEFER'
+    DATA 'S_ESPACIO_NAT'
+    LABELITEM 'ETIQUETA'
+    MAXSCALEDENOM 1048576
+
+    METADATA
+      "wms_title"           "Toponimos_parques_naturales"
+      "wms_abstract"        "Toponimos parques naturales de Espana" 
+      "gml_include_items"   "all"
+      "wms_include_items"   "all"
+      "wms_srs"             "EPSG:4258"
+      "wms_enable_request"  "*"   
+    END       
+    
+    
+	# Parque nacional (Parque 1)
+    CLASS
+    	EXPRESSION ('[ID_TTOPO]'='010201') 
+        LABEL
+    		ENCODING 'ISO-8859-1'
+  			COLOR  '#4daf4a'
+  			#OUTLINECOLOR 255 255 255
+  			FONT "caslon-bd"
+ 			TYPE truetype
+  			SIZE 8
+  			POSITION AUTO
+  			PARTIALS FALSE
+        END   
+	END
+	# Parque natural (Parque 2)
+    CLASS
+    	EXPRESSION ('[ID_TTOPO]'='010202') 
+        LABEL
+    		ENCODING 'ISO-8859-1'
+  			COLOR  '#4daf4a'
+  			#OUTLINECOLOR 255 255 255
+  			FONT "caslon-bd"
+ 			TYPE truetype
+  			SIZE 7
+  			POSITION AUTO
+  			PARTIALS FALSE
+    		#WRAP ' de '
+        END   
+	END
+END 
+    
+#-----------------
+LAYER
+    NAME 'HIDRO_LABEL'
+    TYPE POLYGON
+    TEMPLATE 'blank.html'
+    GROUP 'default'
+    STATUS ON
+    PROJECTION
+    	'init=epsg:4258'
+    END    
+    PROCESSING 'LABEL_NO_CLIP=ON'
+    PROCESSING 'CLOSE_CONNECTION=DEFER'
+    DATA 'S_HIDROGRAFIA'
+    LABELITEM 'ETIQUETA'
+    MAXSCALEDENOM 1048576
+    
+    METADATA
+      "wms_title"           "Toponimos_hidrografia_superficial"
+      "wms_abstract"        "Toponimos hidrografia superficial (lagos, embalses, etc) de Espana" 
+      "gml_include_items"   "all"
+      "wms_include_items"   "all"
+      "wms_srs"             "EPSG:4258"
+      "wms_enable_request"  "*"   
+    END   
+    
+	# Embalse principal (Embalse 1)
+    CLASS
+    	EXPRESSION ('[ID_TTOPO]'='031201') 
+        LABEL
+    		ENCODING 'ISO-8859-1'
+  			COLOR  '#1f78b4'
+  			#OUTLINECOLOR 255 255 255
+  			FONT "z_ltcn"
+ 			TYPE truetype
+  			SIZE 8
+  			POSITION AUTO
+  			PARTIALS FALSE
+    		WRAP ' de '
+        END   
+	END
+	# Embalse restante (Embalse 2)
+    CLASS    
+    	EXPRESSION ('[ID_TTOPO]'='031202') 
+        LABEL
+    		ENCODING 'ISO-8859-1'
+  			COLOR  '#1f78b4'
+  			#OUTLINECOLOR 255 255 255
+  			FONT "z_ltcn"
+ 			TYPE truetype
+  			SIZE 7
+  			POSITION AUTO
+  			PARTIALS FALSE
+    		WRAP ' de '
+        END   
+	END
+	# Lago principal (Lago 1)
+    CLASS
+    	EXPRESSION ('[ID_TTOPO]'='031301') 
+        LABEL
+    		ENCODING 'ISO-8859-1'
+  			COLOR  '#1f78b4'
+  			#OUTLINECOLOR 255 255 255
+  			FONT "z_ltcn"
+ 			TYPE truetype
+  			SIZE 8
+  			POSITION AUTO
+  			PARTIALS FALSE
+    		WRAP ' de '
+        END   
+	END    
+	# Lago restante (Lago 2)
+    CLASS
+    	EXPRESSION ('[ID_TTOPO]'='031302') 
+        LABEL
+    		ENCODING 'ISO-8859-1'
+  			COLOR  '#1f78b4'
+  			#OUTLINECOLOR 255 255 255
+  			FONT "z_ltcn"
+ 			TYPE truetype
+  			SIZE 7
+  			POSITION AUTO
+  			PARTIALS FALSE
+    		WRAP ' de '
+        END   
+	END
+END
+    
+#-----------------------------
+LAYER
+    NAME 'POB_LABEL'
+    TYPE POLYGON
+    TEMPLATE 'blank.html'
+    #ENCODING 'ISO-8859-1'
+    GROUP 'default'
+    PROJECTION
+    	'init=epsg:4258'
+    END    
+    PROCESSING 'LABEL_NO_CLIP=ON'
+    PROCESSING 'CLOSE_CONNECTION=DEFER'
+    DATA 'S_POBLACION'
+    LABELITEM 'ETIQUETA'
+    MAXSCALEDENOM 1048576
+
+    METADATA
+      "wms_title"           "Toponimos_poblaciones_principales"
+      "wms_abstract"        "Toponimos poblaciones principales de Espana" 
+      "gml_include_items"   "all"
+      "wms_include_items"   "all"
+      "wms_srs"             "EPSG:4258"
+      "wms_enable_request"  "*"   
+    END   
+    
+	# Capital de estado    
+    CLASS
+    	EXPRESSION ('[TIPO_0501]'='01') 
+      	LABEL
+    		
+    		PRIORITY 1
+        	COLOR   0 0 0
+        	FONT "arialn"
+        	TYPE truetype
+        	SIZE 12
+        	STYLE
+          		GEOMTRANSFORM 'labelpoly'
+          		COLOR          0 0 0     # underline
+          		OFFSET 0 1                 # (overlap label hack)
+        	END
+        	STYLE
+          		GEOMTRANSFORM 'labelpoly'
+          		COLOR        '#ffcbe4'   # background rect.
+        	END
+      	END
+    END
+    
+	# Capital de CCAA    
+    CLASS
+    	EXPRESSION ('[TIPO_0501]'='02') 
+      	LABEL
+    		PRIORITY 1
+        	COLOR   0 0 0
+        	FONT "arialn"
+        	TYPE truetype
+        	SIZE 11
+        	STYLE
+          		GEOMTRANSFORM 'labelpoly'
+          		COLOR          0 0 0     # underline
+          		OFFSET 0 1                 # (overlap label hack)
+        	END
+        	STYLE
+          		GEOMTRANSFORM 'labelpoly'
+          		COLOR        '#ffcbe4'   # background rect.
+        	END
+      	END
+    END    
+    
+
+	# Capital de Provincia    
+    CLASS
+    	EXPRESSION ('[TIPO_0501]'='03') 
+      	LABEL
+    		PRIORITY 1
+        	COLOR   0 0 0
+        	FONT "arialn"
+        	TYPE truetype
+        	SIZE 11
+        	STYLE
+          		GEOMTRANSFORM 'labelpoly'
+          		COLOR          0 0 0     # underline
+          		OFFSET 0 1                 # (overlap label hack)
+        	END
+        	STYLE
+          		GEOMTRANSFORM 'labelpoly'
+          		COLOR        '#ffcbe4'   # background rect.
+        	END
+      	END
+    END    
+    
+
+	# Capital de municipio > 50 000 hab.  "TIPO_0501"  =  '04' AND "POB_ENT_SI" > 50000    
+    CLASS
+    	EXPRESSION ('[TIPO_0501]'='04' AND [POB_ENT_SI] > 50000) 
+      	LABEL
+    		PRIORITY 2
+        	COLOR   0 0 0
+      		OUTLINECOLOR 255 255 255
+    		OUTLINEWIDTH 1 
+        	FONT "arialn"
+        	TYPE truetype
+        	SIZE 9
+  			POSITION AUTO
+  			PARTIALS FALSE
+      	END
+    END      
+    
+
+	# Capital de municipio de 10 000 - 50 000
+    CLASS
+    	EXPRESSION ('[TIPO_0501]'='04' AND [POB_ENT_SI] > 10000 AND [POB_ENT_SI] <= 50000) 
+      	LABEL
+        	COLOR   0 0 0
+      		OUTLINECOLOR 255 255 255
+    		OUTLINEWIDTH 1 
+        	FONT "arialn"
+        	TYPE truetype
+        	SIZE 8
+  			POSITION AUTO
+  			PARTIALS FALSE
+      	END
+    END     
+    
+	# Capital de municipio de 2 000 - 10 000
+    CLASS
+    	EXPRESSION ('[TIPO_0501]'='04' AND [POB_ENT_SI] > 2000 AND [POB_ENT_SI] <= 10000) 
+      	LABEL
+    		PRIORITY 3
+        	COLOR   0 0 0
+      		OUTLINECOLOR 255 255 255
+    		OUTLINEWIDTH 1 
+        	FONT "arialn"
+        	TYPE truetype
+        	SIZE 7
+  			POSITION AUTO
+  			PARTIALS FALSE
+      	END
+    END     
+
+    
+	# Capital de municipio < 2 000 hab
+    CLASS
+    	EXPRESSION ('[TIPO_0501]'='04' AND [POB_ENT_SI] <= 2000 ) 
+      	LABEL
+    		PRIORITY 4
+        	COLOR   0 0 0
+        	FONT "arialn"
+        	TYPE truetype
+        	SIZE 6
+  			POSITION AUTO
+  			PARTIALS FALSE
+      	END
+    END  
+    
+END   # END LAYER   
+    

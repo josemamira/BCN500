@@ -1,0 +1,158 @@
+#-----------------------------
+LAYER
+    NAME 'PRESA'
+    TYPE LINE
+    TEMPLATE 'blank.html'
+    GROUP 'default'
+    STATUS ON
+    PROJECTION
+    	'init=epsg:4258'
+    END    
+    PROCESSING 'LABEL_NO_CLIP=ON'
+    PROCESSING 'CLOSE_CONNECTION=DEFER'
+    DATA 'L_PRESA'
+    MAXSCALEDENOM 1048576
+
+    METADATA
+      "wms_title"           "Presa"
+      "wms_abstract"        "Linea de presa en pantanos y embalses" 
+      "gml_include_items"   "all"
+      "wms_include_items"   "all"
+      "wms_srs"             "EPSG:4258"
+      "wms_enable_request"  "*"   
+    END     
+    
+    
+    CLASS
+    	STYLE
+    		COLOR '#91522d'
+    		WIDTH 2
+    	END
+	END
+END    
+#-----------------------------
+LAYER
+    NAME 'RIO'
+    TYPE LINE
+    TEMPLATE 'blank.html'
+    GROUP 'default'
+    STATUS ON
+    PROJECTION
+    	'init=epsg:4258'
+    END    
+    PROCESSING 'LABEL_NO_CLIP=ON'
+    PROCESSING 'CLOSE_CONNECTION=DEFER'
+    DATA 'L_HIDROGRAFIA'
+    MAXSCALEDENOM 1048576
+
+    METADATA
+      "wms_title"           "Hidrografia"
+      "wms_abstract"        "Red hidrográfica España" 
+      "gml_include_items"   "all"
+      "wms_include_items"   "all"
+      "wms_srs"             "EPSG:4258"
+      "wms_enable_request"  "*"   
+    END     
+    
+    
+    CLASS
+    	EXPRESSION ('[ID_TTOPO]' = '031101')
+    	STYLE
+    		COLOR '#87daf7'
+    		WIDTH 3
+    	END
+	END
+
+    CLASS
+    	EXPRESSION ('[ID_TTOPO]' = '031101')
+    	STYLE
+    		COLOR '#87daf7'
+    		WIDTH 2
+    	END
+	END    
+    
+    CLASS
+    	EXPRESSION ('[ID_TTOPO]' = '031102')
+    	STYLE
+    		COLOR '#87daf7'
+    		WIDTH 1
+    	END
+	END    
+    
+    CLASS
+    	EXPRESSION ('[ID_TTOPO]' = '031103')
+    	STYLE
+    		COLOR '#87daf7'
+    		WIDTH 0.5
+    	END
+	END    
+    
+    CLASS
+    	EXPRESSION ('[ID_TTOPO]' = '031104')
+    	STYLE
+    		COLOR '#87daf7'
+    		WIDTH 0.5
+    		PATTERN 10 10 END
+    	END
+	END    
+    
+    # canal
+    CLASS
+    	EXPRESSION ('[ID_TTOPO]' = '031105')
+    	STYLE
+    		COLOR '#87daf7'
+    		WIDTH 1.75
+    	END
+    	STYLE
+    		COLOR 255 255 255
+    		WIDTH 0.75
+    	END
+    END    
+    
+END      
+  
+#-----------------------------
+LAYER
+    NAME 'FFCC'
+    TYPE LINE
+    TEMPLATE 'blank.html'
+    GROUP 'default'
+    STATUS ON
+    PROJECTION
+    	'init=epsg:4258'
+    END    
+    PROCESSING 'LABEL_NO_CLIP=ON'
+    PROCESSING 'CLOSE_CONNECTION=DEFER'
+    DATA 'L_FFCC'
+    MAXSCALEDENOM 1048576
+
+    METADATA
+      "wms_title"           "FFCC"
+      "wms_abstract"        "Red ferroviaria de Espana" 
+      "gml_include_items"   "all"
+      "wms_include_items"   "all"
+      "wms_srs"             "EPSG:4258"
+      "wms_enable_request"  "*"   
+    END     
+    
+    CLASS
+    	#EXPRESSION ('[ID_TTOPO]' = '031101')
+    	STYLE
+    		COLOR '#000000'
+    		WIDTH 1
+    	END
+
+        STYLE
+            SYMBOL 'ffcc'
+            COLOR 0 0 0
+            SIZE 5
+            WIDTH 2
+            INITIALGAP 20 # cuando empieza
+            GAP -20 # cada cuanto se repite
+        END # STYLE     
+    
+    END
+
+END
+
+

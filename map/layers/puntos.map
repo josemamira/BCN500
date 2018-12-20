@@ -1,0 +1,351 @@
+LAYER
+    NAME 'VERTGEO'
+    TYPE POINT
+    TEMPLATE 'blank.html'
+    GROUP 'default'
+    STATUS ON
+    PROJECTION
+    	'init=epsg:4326'
+    END    
+    PROCESSING 'LABEL_NO_CLIP=ON'
+    PROCESSING 'CLOSE_CONNECTION=DEFER'
+    DATA 'P_VERT_GEODESICO'  
+    MAXSCALEDENOM 1048576
+    
+    METADATA
+      "wms_title"           "Red_vertices_geodesicos"
+      "wms_abstract"        "Red vertices geodesicos principales de Espana" 
+      "gml_include_items"   "all"
+      "wms_include_items"   "all"
+      "wms_srs"             "EPSG:4258"
+      "wms_enable_request"  "*"   
+    END    
+    
+    
+    CLASS
+    	STYLE
+    		SYMBOL    "triangle2"
+        	COLOR     100 100 100
+        	SIZE      8
+      	END
+	END
+END
+    
+
+#-----------------------------
+LAYER
+    NAME 'PUERTO'
+    TYPE POINT
+    TEMPLATE 'blank.html'
+    GROUP 'default'
+    STATUS ON
+    PROJECTION
+    	'init=epsg:4326'
+    END    
+    PROCESSING 'LABEL_NO_CLIP=ON'
+    PROCESSING 'CLOSE_CONNECTION=DEFER'
+    DATA 'P_PUERTO_MAR'  
+    MAXSCALEDENOM 1048576
+
+    METADATA
+      "wms_title"           "Puertos"
+      "wms_abstract"        "Puertos principales de Espana" 
+      "gml_include_items"   "all"
+      "wms_include_items"   "all"
+      "wms_srs"             "EPSG:4258"
+      "wms_enable_request"  "*"   
+    END        
+    
+    
+    CLASS
+		SYMBOL 'puerto'
+    	#COLOR 255 0 0
+    	SIZE 15
+    END # fin class
+END    
+    
+#-----------------------------
+LAYER
+    NAME 'POBLACION'
+    TYPE POINT
+    TEMPLATE 'blank.html'
+    GROUP 'default'
+    STATUS ON
+    PROJECTION
+    	'init=epsg:4326'
+    END    
+    PROCESSING 'LABEL_NO_CLIP=ON'
+    PROCESSING 'CLOSE_CONNECTION=DEFER'
+    DATA 'P_POBLACION'  
+    MAXSCALEDENOM 1048576
+
+    METADATA
+      "wms_title"           "Puntos_nucleos_poblacion"
+      "wms_abstract"        "Nucleos de población puntual de Espana" 
+      "gml_include_items"   "all"
+      "wms_include_items"   "all"
+      "wms_srs"             "EPSG:4258"
+      "wms_enable_request"  "*"   
+    END        
+    
+    CLASS
+    	STYLE
+			SYMBOL 'circle'
+    		COLOR '#fb9a99'
+    		SIZE 7
+    	END
+    	STYLE
+			SYMBOL 'circle'
+    		COLOR '#ffcbe4'
+    		SIZE 5
+    	END
+    END # fin class
+END   
+
+
+#-----------------------------
+LAYER
+    NAME 'PICO_PUERTO'
+    TYPE POINT
+    TEMPLATE 'blank.html'
+    GROUP 'default'
+    STATUS ON
+    PROJECTION
+    	'init=epsg:4326'
+    END    
+    PROCESSING 'LABEL_NO_CLIP=ON'
+    PROCESSING 'CLOSE_CONNECTION=DEFER'
+    DATA 'P_PICO_PUERTO'  
+    MAXSCALEDENOM 1048576
+    
+    METADATA
+      "wms_title"           "Picos_puertos"
+      "wms_abstract"        "Principales picos y puertos de montaña de Espana" 
+      "gml_include_items"   "all"
+      "wms_include_items"   "all"
+      "wms_srs"             "EPSG:4258"
+      "wms_enable_request"  "*"   
+    END        
+    
+    CLASS
+    	STYLE
+			SYMBOL 'circle'
+    		COLOR 0 0 0
+    		SIZE 3
+    	END
+
+    END # fin class
+END  
+#-----------------------------
+LAYER
+    NAME 'LUGAR_INTERES'
+    TYPE POINT
+    TEMPLATE 'blank.html'
+    GROUP 'default'
+    STATUS ON
+    PROJECTION
+    	'init=epsg:4326'
+    END    
+    PROCESSING 'LABEL_NO_CLIP=ON'
+    PROCESSING 'CLOSE_CONNECTION=DEFER'
+    DATA 'P_LUGAR_INTERES'  
+    MAXSCALEDENOM 1048576
+    
+    METADATA
+      "wms_title"           "Lugares_interes"
+      "wms_abstract"        "Principales lugares de interes: monumentos, minas, centros religiosos, etc." 
+      "gml_include_items"   "all"
+      "wms_include_items"   "all"
+      "wms_srs"             "EPSG:4258"
+      "wms_enable_request"  "*"   
+    END    
+    
+    CLASS
+      NAME       "Monumentos religiosos"
+      EXPRESSION ( '[TIPO_0502]'  =  '01' )
+      TEXT "A"
+      LABEL
+  		COLOR  0 0 0
+  		OUTLINECOLOR 255 255 255
+  		FONT "bcn500"
+ 		TYPE truetype
+  		SIZE 100
+  		POSITION AUTO
+  		PARTIALS FALSE
+      END
+    END # fin class     
+    
+    CLASS
+      NAME       "Monumentos"
+      EXPRESSION ( '[TIPO_0502]'  =  '02' )
+      TEXT "F"
+      LABEL
+  		COLOR  0 0 0
+  		OUTLINECOLOR 255 255 255
+  		FONT "bcn500"
+ 		TYPE truetype
+  		SIZE 10
+  		POSITION AUTO
+  		PARTIALS FALSE
+      END
+    END # fin class      
+    
+    CLASS
+      NAME       "Ruinas"
+      EXPRESSION ( '[TIPO_0502]'  =  '03' )
+      TEXT "G"
+      LABEL
+  		COLOR  0 0 0
+  		OUTLINECOLOR 255 255 255
+  		FONT "bcn500"
+ 		TYPE truetype
+  		SIZE 10
+  		POSITION AUTO
+  		PARTIALS FALSE
+      END
+    END # fin class     
+
+    CLASS
+      NAME       "Cuevas"
+      EXPRESSION ( '[TIPO_0502]'  =  '04' )
+      TEXT "I"
+      LABEL
+  		COLOR  0 0 0
+  		OUTLINECOLOR 255 255 255
+  		FONT "bcn500"
+ 		TYPE truetype
+  		SIZE 10
+  		POSITION AUTO
+  		PARTIALS FALSE
+      END
+    END # fin class     
+    
+    CLASS
+      NAME       "Minas y canteras"
+      EXPRESSION ( '[TIPO_0502]'  =  '06' )
+      TEXT "S"
+      LABEL
+  		COLOR  0 0 0
+  		OUTLINECOLOR 255 255 255
+  		FONT "bcn500"
+ 		TYPE truetype
+  		SIZE 10
+  		POSITION AUTO
+  		PARTIALS FALSE
+      END
+    END # fin class   
+    
+END  
+#---------------------------- 
+LAYER
+    NAME 'FARO'
+    TYPE POINT
+    TEMPLATE 'blank.html'
+    GROUP 'default'
+    STATUS ON
+    PROJECTION
+    	'init=epsg:4326'
+    END    
+    PROCESSING 'LABEL_NO_CLIP=ON'
+    PROCESSING 'CLOSE_CONNECTION=DEFER'
+    DATA 'P_FARO'  
+    MAXSCALEDENOM 1048576
+    LABELITEM 'ETIQUETA'
+
+    METADATA
+      "wms_title"           "Faros"
+      "wms_abstract"        "Principales faros costeros de Espana" 
+      "gml_include_items"   "all"
+      "wms_include_items"   "all"
+      "wms_srs"             "EPSG:4258"
+      "wms_enable_request"  "*"   
+    END        
+    
+    
+    CLASS
+    	STYLE
+    		SYMBOL    "star"
+        	COLOR     255 0 0
+        	SIZE      12
+      	END
+    	STYLE
+    		SYMBOL    "circle"
+        	COLOR     255 255 255
+        	SIZE      6
+      	END
+        LABEL
+  			COLOR  0 0 0
+  			OUTLINECOLOR 255 255 255
+  			FONT "arial-italic"
+ 			TYPE truetype
+  			SIZE 7
+  			POSITION UR
+  			PARTIALS FALSE
+    		OFFSET 3 3
+        END  
+    END
+END
+#-------------    
+LAYER
+    NAME 'EST_FFCC'
+    TYPE POINT
+    TEMPLATE 'blank.html'
+    GROUP 'default'
+    STATUS ON
+    PROJECTION
+    	'init=epsg:4326'
+    END    
+    PROCESSING 'LABEL_NO_CLIP=ON'
+    PROCESSING 'CLOSE_CONNECTION=DEFER'
+    DATA 'P_EST_FFCC'  
+    MAXSCALEDENOM 1048576
+
+    METADATA
+      "wms_title"           "Estaciones_ferrocarril"
+      "wms_abstract"        "Red de estaciones de ferrocarril de Espana" 
+      "gml_include_items"   "all"
+      "wms_include_items"   "all"
+      "wms_srs"             "EPSG:4258"
+      "wms_enable_request"  "*"   
+    END        
+    
+    CLASS
+    	STYLE
+    		SYMBOL    "square"
+        	COLOR     0 0 0
+        	SIZE      6
+      	END
+	END
+END 
+#-------------    
+LAYER
+    NAME 'AEROPUERTOS'
+    TYPE POINT
+    TEMPLATE 'blank.html'
+    GROUP 'default'
+    STATUS ON
+    PROJECTION
+    	'init=epsg:4326'
+    END    
+    PROCESSING 'LABEL_NO_CLIP=ON'
+    PROCESSING 'CLOSE_CONNECTION=DEFER'
+    DATA 'P_AEROP_AEROD'  
+    MAXSCALEDENOM 1048576
+    
+    METADATA
+      "wms_title"           "Aeropuertos"
+      "wms_abstract"        "Principales aeropuertos de Espana" 
+      "gml_include_items"   "all"
+      "wms_include_items"   "all"
+      "wms_srs"             "EPSG:4258"
+      "wms_enable_request"  "*"   
+    END    
+    
+    CLASS
+    	STYLE
+    		SYMBOL    "aeropuerto"
+        	COLOR     0 0 0
+        	SIZE      12
+      	END
+	END
+END    

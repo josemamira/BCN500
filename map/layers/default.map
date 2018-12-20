@@ -1,0 +1,31 @@
+LAYER
+    NAME 'tierra'
+    TYPE POLYGON
+    TEMPLATE 'blank.html'
+    GROUP 'default'
+    STATUS ON
+    PROJECTION
+    	'init=epsg:4326'
+    END    
+    PROCESSING 'LABEL_NO_CLIP=ON'
+    PROCESSING 'CLOSE_CONNECTION=DEFER'
+    DATA 'paises'
+    
+    METADATA
+      "wms_title"           "Paises"
+      "wms_abstract"        "Paises del mundo" 
+      "gml_include_items"   "all"
+      "wms_include_items"   "all"
+      "wms_srs"             "EPSG:4326"
+
+    END    
+    
+    
+
+    CLASS
+    	STYLE
+    		COLOR '#f2f2f2'
+    	END
+	END
+END
+

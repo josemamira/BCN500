@@ -1,0 +1,275 @@
+#-----------------------------
+LAYER
+    NAME 'PROV'
+    TYPE POLYGON
+    TEMPLATE 'blank.html'
+    GROUP 'default'
+    STATUS ON
+    PROJECTION
+    	'init=epsg:4258'
+    END    
+    PROCESSING 'LABEL_NO_CLIP=ON'
+    PROCESSING 'CLOSE_CONNECTION=DEFER'
+    DATA 'L_LIMITE_ADM'
+
+    METADATA
+      "wms_title"           "Provincias"
+      "wms_abstract"        "Provincias de Espana" 
+      "gml_include_items"   "all"
+      "wms_include_items"   "all"
+      "wms_srs"             "EPSG:4258"
+      "wms_enable_request"  "*"   
+    END        
+    
+    
+    CLASS
+    	STYLE
+    		COLOR '#EEECDF'
+    	END
+	END
+END
+#-----------------------------
+LAYER
+    NAME 'PROV_LINE'
+    TYPE LINE
+    TEMPLATE 'blank.html'
+    GROUP 'default'
+    STATUS ON
+    PROJECTION
+    	'init=epsg:4258'
+    END    
+    PROCESSING 'LABEL_NO_CLIP=ON'
+    PROCESSING 'CLOSE_CONNECTION=DEFER'
+    DATA 'L_LIMITE_ADM'
+
+    METADATA
+      "wms_title"           "Provincias_lineas"
+      "wms_abstract"        "Lineas provincias de Espana" 
+      "gml_include_items"   "all"
+      "wms_include_items"   "all"
+      "wms_srs"             "EPSG:4258"
+      "wms_enable_request"  "*"   
+    END    
+    
+    
+    CLASS
+        STYLE  # no offset
+            #PATTERN 10 10 END
+            COLOR 0 0 0    # black
+            WIDTH 2
+        END 
+
+        STYLE
+            PATTERN 10 10 END
+            COLOR 236 199 225    # black
+            WIDTH 2
+        END # STYLE      
+
+    END
+    
+   
+END
+
+#-----------------------------
+LAYER
+    NAME 'HIDRO_POL'
+    TYPE POLYGON
+    TEMPLATE 'blank.html'
+    GROUP 'default'
+    STATUS ON
+    PROJECTION
+    	'init=epsg:4258'
+    END    
+    PROCESSING 'LABEL_NO_CLIP=ON'
+    PROCESSING 'CLOSE_CONNECTION=DEFER'
+    DATA 'S_HIDROGRAFIA'
+    MAXSCALEDENOM 1048576
+
+    METADATA
+      "wms_title"           "Hidrologia"
+      "wms_abstract"        "Superficies con agua" 
+      "gml_include_items"   "all"
+      "wms_include_items"   "all"
+      "wms_srs"             "EPSG:4258"
+      "wms_enable_request"  "*"   
+    END    
+    
+    CLASS
+    	STYLE
+    		COLOR '#caecfb'
+    		OUTLINECOLOR '#87daf7'
+    	END
+	END
+END
+#-----------------------------
+LAYER
+    NAME 'PN_POL'
+    TYPE LINE
+    TEMPLATE 'blank.html'
+    GROUP 'default'
+    STATUS ON
+    PROJECTION
+    	'init=epsg:4258'
+    END    
+    PROCESSING 'LABEL_NO_CLIP=ON'
+    PROCESSING 'CLOSE_CONNECTION=DEFER'
+    DATA 'S_ESPACIO_NAT'
+    MAXSCALEDENOM 1048576
+
+    METADATA
+      "wms_title"           "Parques naturales"
+      "wms_abstract"        "Parques naturales de Espana" 
+      "gml_include_items"   "all"
+      "wms_include_items"   "all"
+      "wms_srs"             "EPSG:4258"
+      "wms_enable_request"  "*"   
+    END    
+    
+    
+    CLASS 
+    	STYLE
+    		COLOR '#4daf4a'
+    		WIDTH 4
+    		PATTERN 10 10 END
+    	END
+	END
+END 
+#-----------------------------
+LAYER
+    NAME 'BATIMETRIA'
+    TYPE POLYGON
+    TEMPLATE 'blank.html'
+    GROUP 'default'
+    STATUS ON
+    PROJECTION
+    	'init=epsg:4258'
+    END    
+    PROCESSING 'LABEL_NO_CLIP=ON'
+    PROCESSING 'CLOSE_CONNECTION=DEFER'
+    DATA 'batimetria'
+    CLASSITEM 'Profundida'
+
+    
+    METADATA
+      "wms_title"           "Batimetria"
+      "wms_abstract"        "Batimetria mares y oceanos" 
+      "gml_include_items"   "all"
+      "wms_include_items"   "all"
+      "wms_srs"             "EPSG:4258"
+      "wms_enable_request"  "*"   
+    END     
+    
+    
+    
+    CLASS
+    	EXPRESSION '0-50'
+    	STYLE
+    		COLOR '#e7f3fc'
+    		OUTLINECOLOR '#1f78b4'
+    		WIDTH 0.2
+    	END
+	END
+    CLASS
+    	EXPRESSION '50-100'
+    	STYLE
+    		COLOR '#cfecfa'
+    		OUTLINECOLOR '#1f78b4'
+    		WIDTH 0.2
+    	END
+	END
+    CLASS
+    	EXPRESSION '100-200'
+    	STYLE
+    		COLOR '#bde6f7'
+    		OUTLINECOLOR '#1f78b4'
+    		WIDTH 0.2
+    	END
+	END
+    CLASS
+    	EXPRESSION '200-500'
+    	STYLE
+    		COLOR '#b8e2f0'
+    		OUTLINECOLOR '#1f78b4'
+    		WIDTH 0.2
+    	END
+	END
+    CLASS
+    	EXPRESSION '500-1000'
+    	STYLE
+    		COLOR '#a2daf4'
+    		OUTLINECOLOR '#1f78b4'
+    		WIDTH 0.2
+    	END
+	END    
+    CLASS
+    	EXPRESSION '1000-2000'
+    	STYLE
+    		COLOR '#8ad2f1'
+    		OUTLINECOLOR '#1f78b4'
+    		WIDTH 0.2
+    	END
+	END     
+    CLASS
+    	EXPRESSION '2000-3000'
+    	STYLE
+    		COLOR '#6bc4e7'
+    		OUTLINECOLOR '#1f78b4'
+    		WIDTH 0.2
+    	END
+	END 
+    CLASS
+    	EXPRESSION '3000-4000'
+    	STYLE
+    		COLOR '#68bee1'
+    		OUTLINECOLOR '#1f78b4'
+    		WIDTH 0.2
+    	END
+	END 
+    CLASS
+    	EXPRESSION '4000-5000'
+    	STYLE
+    		COLOR '#68bee1'
+    		OUTLINECOLOR '#1f78b4'
+    		WIDTH 0.2
+    	END
+	END
+    CLASS
+    	EXPRESSION '> 5000'
+    	STYLE
+    		COLOR '#64b8da'
+    		OUTLINECOLOR '#1f78b4'
+    		WIDTH 0.2
+    	END
+	END       
+    
+END
+#-----------------------------
+LAYER
+    NAME 'POB'
+    TYPE POLYGON
+    TEMPLATE 'blank.html'
+    GROUP 'default'
+    STATUS ON
+    PROJECTION
+    	'init=epsg:4258'
+    END    
+    PROCESSING 'LABEL_NO_CLIP=ON'
+    PROCESSING 'CLOSE_CONNECTION=DEFER'
+    DATA 'S_POBLACION'
+
+    METADATA
+      "wms_title"           "Nucleos_poblacion_s"
+      "wms_abstract"        "Superficie de nucleos de poblacion" 
+      "gml_include_items"   "all"
+      "wms_include_items"   "all"
+      "wms_srs"             "EPSG:4258"
+      "wms_enable_request"  "*"   
+    END 
+    
+    CLASS
+    	STYLE
+    		COLOR '#ffcbe4'
+    		OUTLINECOLOR '#e7b8ce'
+    	END
+	END
+END

@@ -1,0 +1,152 @@
+LAYER
+    NAME 'VIAS_2'
+    TYPE LINE
+    TEMPLATE 'blank.html'
+    GROUP 'default'
+    STATUS ON
+    PROJECTION
+    	'init=epsg:4326'
+    END    
+    PROCESSING 'LABEL_NO_CLIP=ON'
+    PROCESSING 'CLOSE_CONNECTION=DEFER'
+    DATA 'L_CARRETERA_SECUN'
+    MAXSCALEDENOM 1048576
+
+    METADATA
+      "wms_title"           "Red_viaria_secundaria"
+      "wms_abstract"        "Red viaria secundaria de Espana" 
+      "gml_include_items"   "all"
+      "wms_include_items"   "all"
+      "wms_srs"             "EPSG:4258"
+      "wms_enable_request"  "*"   
+    END    
+    
+    
+    
+    CLASS
+
+    	STYLE
+    		COLOR 0 0 0
+    		WIDTH 2
+    	END
+    	STYLE
+    		COLOR 255 255 0
+    		WIDTH 1
+    	END    
+    END
+END
+#---------------------
+LAYER
+    NAME 'VIAS_PPAL'
+    TYPE LINE
+    TEMPLATE 'blank.html'
+    GROUP 'default'
+    STATUS ON
+    PROJECTION
+    	'init=epsg:4326'
+    END    
+    PROCESSING 'LABEL_NO_CLIP=ON'
+    PROCESSING 'CLOSE_CONNECTION=DEFER'
+    DATA 'L_CARRETERA_PPAL'
+    LABELITEM 'ETIQUETA'
+    MAXSCALEDENOM 1048576
+
+    METADATA
+      "wms_title"           "Red_viaria_principal"
+      "wms_abstract"        "Red viaria principal de Espana" 
+      "gml_include_items"   "all"
+      "wms_include_items"   "all"
+      "wms_srs"             "EPSG:4258"
+      "wms_enable_request"  "*"   
+    END     
+    
+    
+    
+    CLASS
+
+    	STYLE
+    		COLOR 0 0 0
+    		WIDTH 3
+    	END
+    	STYLE
+    		COLOR 255 0 0
+    		WIDTH 1.5
+    	END    
+    
+    END
+END
+
+    
+   
+    
+#---------------------
+LAYER
+    NAME 'VIAS_AUTOPISTA'
+    TYPE LINE
+    TEMPLATE 'blank.html'
+    GROUP 'default'
+    STATUS ON
+    PROJECTION
+    	'init=epsg:4326'
+    END    
+    PROCESSING 'LABEL_NO_CLIP=ON'
+    PROCESSING 'CLOSE_CONNECTION=DEFER'
+    DATA 'L_AUTOP_AUTOV'
+    LABELITEM 'ETIQUETA'
+    MAXSCALEDENOM 1048576
+
+    METADATA
+      "wms_title"           "Red_viaria_autopistas"
+      "wms_abstract"        "Red viaria autopistas y autovias de Espana" 
+      "gml_include_items"   "all"
+      "wms_include_items"   "all"
+      "wms_srs"             "EPSG:4258"
+      "wms_enable_request"  "*"   
+    END        
+    
+    
+    
+    CLASS
+    	EXPRESSION ('[TIPO_0601]' = '01')
+
+    	STYLE
+    		COLOR 255 0 0
+    		WIDTH 5
+    	END
+    	STYLE
+    		COLOR 255 255 0
+    		WIDTH 3
+    	END    
+    	STYLE
+    		COLOR 255 0 0
+    		WIDTH 1
+    	END   
+    
+    END
+
+    CLASS
+    	EXPRESSION ('[TIPO_0601]' = '07')
+
+    	STYLE
+    		COLOR 255 0 0
+    		WIDTH 5
+    	END
+    	STYLE
+    		COLOR 255 255 255
+    		WIDTH 3
+    	END    
+    END
+	# resto
+    CLASS
+    	STYLE
+    		COLOR 255 0 0
+    		WIDTH 5
+    	END
+    	STYLE
+    		COLOR 200 200 200
+    		WIDTH 3
+    	END    
+    END    
+    
+END #FIN CAPA    
+   
