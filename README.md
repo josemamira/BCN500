@@ -4,6 +4,8 @@ El objetivo de este proyecto es mostrar las capacidades de MapServer para repres
 Los  datos están en formato shapefile y son accesibles en esta dirección:
 [Centro de descargas del CNIG](http://centrodedescargas.cnig.es/CentroDescargas/index.jsp) -> Mapas vectoriales y Bases Cartográficas y Topográficas -> BCN500
 
+![Ejemplo cartografía BCN400](https://github.com/josemamira/BCN500/blob/master/bcn500.png)
+
 # Información
 
 Este proyecto se ha realizado con Mapserver utilizando la herramienta [ScribeUI](http://scribeui.org/). El proyecto pretende crear una base lo más cercana posible a la que se ofrece en la web (Iberpix)
