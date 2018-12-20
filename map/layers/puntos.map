@@ -23,6 +23,7 @@ LAYER
     
     
     CLASS
+    	NAME 'Vértice geodésico'
     	STYLE
     		SYMBOL    "triangle2"
         	COLOR     100 100 100
@@ -58,6 +59,7 @@ LAYER
     
     
     CLASS
+    	NAME 'Puerto'
 		SYMBOL 'puerto'
     	#COLOR 255 0 0
     	SIZE 15
@@ -89,6 +91,7 @@ LAYER
     END        
     
     CLASS
+    	NAME 'Núcleos población'
     	STYLE
 			SYMBOL 'circle'
     		COLOR '#fb9a99'
@@ -128,6 +131,7 @@ LAYER
     END        
     
     CLASS
+    	NAME 'Picos y puertos'
     	STYLE
 			SYMBOL 'circle'
     		COLOR 0 0 0
@@ -263,6 +267,7 @@ LAYER
     
     
     CLASS
+    	NAME 'Faro'
     	STYLE
     		SYMBOL    "star"
         	COLOR     255 0 0
@@ -310,6 +315,7 @@ LAYER
     END        
     
     CLASS
+    	NAME 'Estaciones FFCC'
     	STYLE
     		SYMBOL    "square"
         	COLOR     0 0 0
@@ -342,7 +348,8 @@ LAYER
     END    
     
     CLASS
-    	STYLE
+    	NAME 'Aeropuerto'
+    	STYLE    		
     		SYMBOL    "aeropuerto"
         	COLOR     0 0 0
         	SIZE      12
