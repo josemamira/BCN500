@@ -92,6 +92,7 @@ LAYER
     
     
     CLASS
+      NAME 'Nombre red viaria principal'
       LABEL
     	TYPE TRUETYPE 
 	    FONT sans 
@@ -145,6 +146,7 @@ LAYER
     
     
     CLASS
+    	NAME 'Nombre autopistas/autovias'
     	EXPRESSION ('[TIPO_0601]' = '01' OR '[TIPO_0601]' = '07')
        	LABEL
     		TYPE TRUETYPE 
@@ -200,6 +202,7 @@ LAYER
     
     # Accidentes costeros de 1o orden
     CLASS
+    	NAME 'Accidentes costeros de 1er orden'
     	EXPRESSION ('[ID_TTOPO]' = '022101')
     	LABEL
   			COLOR  		 '#37a6ff'   	
@@ -216,6 +219,7 @@ LAYER
 
 	# Accidentes costeros 2o orden
     CLASS
+    	NAME 'Accidentes costeros de 2nd orden'
     	EXPRESSION ('[ID_TTOPO]' = '022102')
     	LABEL
   			COLOR  		 '#37a6ff'   	
@@ -232,6 +236,7 @@ LAYER
     
 	# Accidentes costeros de 3o orden
     CLASS
+    	NAME 'Accidentes costeros de 3er orden'
     	EXPRESSION ('[ID_TTOPO]' = '022103')
     	LABEL
   			COLOR  		 '#37a6ff'   	
@@ -278,6 +283,7 @@ LAYER
     
     #Pico principal (Pico 1)
     CLASS
+    	NAME 'Nombre Pico principal'
     	EXPRESSION ( '[ID_TTOPO]'  =  '021201' )
         LABEL
     		TEXT  '[ETIQUETA] [COTA]'
@@ -293,6 +299,7 @@ LAYER
 	END
     # Pico restante (Pico 2)
     CLASS
+    	NAME 'Nombre Pico restante'
     	EXPRESSION ( '[ID_TTOPO]'  =  '021202' )
         LABEL
     		TEXT  '[ETIQUETA] [COTA]'
@@ -308,6 +315,7 @@ LAYER
 	END
     # Puerto de montaña
     CLASS
+    	NAME 'Nombre puerto de montaña'
     	EXPRESSION ( '[ID_TTOPO]'  =  '021203' )
         LABEL
     		TEXT  '[ETIQUETA] [COTA]' 
@@ -323,6 +331,7 @@ LAYER
 	END
     # Cota altimétrica (Cota)
     CLASS
+    	NAME 'Cota altimétrica'
     	EXPRESSION ( '[ID_TTOPO]'  =  '021204' )
         LABEL
     		TEXT '[COTA]'
@@ -364,6 +373,7 @@ LAYER
     END       
     
     CLASS
+    	NAME 'Nombre lugar de interés'
         LABEL
   			COLOR  0 0 0
   			OUTLINECOLOR 255 255 255
@@ -405,6 +415,7 @@ LAYER
     
 	# Río de 1o orden
     CLASS
+    	NAME 'Nombre rio de 1er orden'
     	EXPRESSION ('[ID_TTOPO]' = '031101')
     	LABEL
   			COLOR  		 '#37a6ff'   	
@@ -421,6 +432,7 @@ LAYER
 
 	# Río de 2o orden
     CLASS
+    	NAME 'Nombre rio de 2nd orden'
     	EXPRESSION ('[ID_TTOPO]' = '031102')
     	LABEL
   			COLOR  		 '#37a6ff'   	
@@ -437,6 +449,7 @@ LAYER
     
 	# Río de 3o orden
     CLASS
+    	NAME 'Nombre rio de 3er orden'
     	EXPRESSION ('[ID_TTOPO]' = '031103')
         MAXSCALEDENOM 524288 # nivel 10
     	LABEL
@@ -454,6 +467,7 @@ LAYER
 
 	# Río de 4o orden
     CLASS
+    	NAME 'Nombre rio de 4o orden'
     	MAXSCALEDENOM 524288 # nivel 10
     	EXPRESSION ('[ID_TTOPO]' = '031104')
     	LABEL
@@ -471,6 +485,7 @@ LAYER
 
 	# Canal
     CLASS
+    	NAME 'Nombre canal'
     	MAXSCALEDENOM 524288 # nivel 10
     	EXPRESSION ('[ID_TTOPO]' = '031105')
     	LABEL    		
@@ -515,6 +530,7 @@ LAYER
     
 	# Sierra de 1o orden
     CLASS
+    	NAME 'Nombre sierra de 1er orden'
     	EXPRESSION ('[ID_TTOPO]' = '021101')
     	LABEL
     		PRIORITY 1
@@ -532,6 +548,7 @@ LAYER
 
 	# Sierra de 2o orden
     CLASS
+    	NAME 'Nombre sierra de 2nd orden'
     	EXPRESSION ('[ID_TTOPO]' = '021102')
     	LABEL
   			COLOR  		 '#ca6200'   	
@@ -548,6 +565,7 @@ LAYER
     
 	# Sierra de 3o orden
     CLASS
+    	NAME 'Nombre sierra de 3er orden'
     	EXPRESSION ('[ID_TTOPO]' = '021103')
     	LABEL
   			COLOR  		 '#ca6200'   	
@@ -562,8 +580,9 @@ LAYER
       	END
 	END    
 
-	# Sierra de 4o orden
+	# Sierra de 4o orden    
     CLASS
+    	NAME 'Nombre sierra de 4o orden'
     	EXPRESSION ('[ID_TTOPO]' = '021104')
     	LABEL
   			COLOR  		 '#ca6200'   	
@@ -608,6 +627,7 @@ LAYER
     
 	# Isla de 1o orden
     CLASS
+    	NAME 'Nombre isla de 1er orden'
     	EXPRESSION ('[ID_TTOPO]' = '022201')
     	LABEL
   			COLOR  		 '#ca6200'   	
@@ -624,6 +644,7 @@ LAYER
 
 	# Isla de 2o orden
     CLASS
+    	NAME 'Nombre isla de 2nd orden'
     	EXPRESSION ('[ID_TTOPO]' = '022202')
     	LABEL
   			COLOR  		 '#ca6200'   	
@@ -640,6 +661,7 @@ LAYER
     
 	# Isla de 3o orden
     CLASS
+    	NAME 'Nombre isla de 3er orden'
     	EXPRESSION ('[ID_TTOPO]' = '022203')
     	LABEL
   			COLOR  		 '#ca6200'   	
@@ -682,6 +704,7 @@ LAYER
     END       
     
     CLASS
+    	NAME 'Nombre poblaciones'
         LABEL
   			COLOR  0 0 0
   			OUTLINECOLOR 255 255 255
@@ -725,6 +748,7 @@ LAYER
     
 	# Área geográfica de 1o orden
     CLASS
+    	NAME 'Nombre área geográfica de 1er orden'
     	EXPRESSION ('[ID_TTOPO]' = '021301')
     	LABEL
   			COLOR  		 100 100 100   	
@@ -741,6 +765,7 @@ LAYER
     
 	# Área geográfica de 2o orden
     CLASS
+    	NAME 'Nombre área geográfica de 2nd orden'
     	EXPRESSION ('[ID_TTOPO]' = '021302')
     	LABEL
   			COLOR  		100 100 100   	
@@ -757,6 +782,7 @@ LAYER
     
 	# Área geográfica de 3o orden
     CLASS
+    	NAME 'Nombre área geográfica de 3er orden'
     	EXPRESSION ('[ID_TTOPO]' = '021303')
     	LABEL
   			COLOR  		 100 100 100  	
@@ -922,6 +948,7 @@ LAYER
     
 	# Cabo principal (Cabo 1)
     CLASS
+    	NAME 'Nombre cabo principal'
     	EXPRESSION ('[ID_TTOPO]' = '022101')
     	LABEL
   			COLOR  		 0 0 0   	
@@ -939,6 +966,7 @@ LAYER
 
 	# Cabo restante (Cabo 2)
     CLASS
+    	NAME 'Nombre cabos restantes'
     	EXPRESSION ('[ID_TTOPO]' = '022102')
     	LABEL
   			COLOR  		 0 0 0   	
@@ -956,6 +984,7 @@ LAYER
     
 	# Playa y otros accidentes costeros (Playa)
     CLASS
+    	NAME 'Playa y otros accidentes costeros'
     	EXPRESSION ('[ID_TTOPO]' = '022103')
     	LABEL
   			COLOR  		 0 0 0   	
@@ -1001,6 +1030,7 @@ LAYER
     
 	# Mar de 2o orden y estrecho marítimo
     CLASS
+    	NAME 'Mar de 1er orden y estrecho marítimo'
     	EXPRESSION ('[ID_TTOPO]' = '032101')
     	LABEL
   			COLOR  		 '#1f78b4'   	
@@ -1017,6 +1047,7 @@ LAYER
 
 	# Mar de 3o orden y estrecho marítimo
     CLASS
+    	NAME 'Mar de 2nd orden'
     	EXPRESSION ('[ID_TTOPO]' = '032102')
     	LABEL
   			COLOR  		 '#1f78b4'   	
@@ -1033,6 +1064,7 @@ LAYER
     
 	# Oceano
     CLASS
+    	NAME 'Mar de 3er orden'
     	EXPRESSION ('[ID_TTOPO]' = '032103')
     	LABEL
   			COLOR  		 '#1f78b4'   	
@@ -1049,6 +1081,7 @@ LAYER
 
 	# Entrante costero de 1 er orden(Golfo 1)
     CLASS
+    	NAME 'Entrante costero de 1 er orden'
     	EXPRESSION ('[ID_TTOPO]' = '032201')
     	LABEL
   			COLOR  		 '#1f78b4'   	
@@ -1065,6 +1098,7 @@ LAYER
 
 	# Entrante costero de 2o orden (Golfo 2)
     CLASS
+    	NAME 'Entrante costero de 2o orden'
     	EXPRESSION ('[ID_TTOPO]' = '032202')
     	LABEL
   			COLOR  		 '#1f78b4'   	
@@ -1081,6 +1115,7 @@ LAYER
 
 	# Entrante costero de 3 er orden (Golfo 3)
     CLASS
+    	NAME 'Entrante costero de 3 er orden'
     	EXPRESSION ('[ID_TTOPO]' = '032203')
     	LABEL
   			COLOR  		 '#1f78b4'   	
@@ -1126,6 +1161,7 @@ LAYER
     
 	# Parque nacional (Parque 1)
     CLASS
+    	NAME 'Parque natural de 1er orden'
     	EXPRESSION ('[ID_TTOPO]'='010201') 
         LABEL
     		ENCODING 'ISO-8859-1'
@@ -1140,6 +1176,7 @@ LAYER
 	END
 	# Parque natural (Parque 2)
     CLASS
+    	NAME 'Otros parques naturales'
     	EXPRESSION ('[ID_TTOPO]'='010202') 
         LABEL
     		ENCODING 'ISO-8859-1'
@@ -1182,6 +1219,7 @@ LAYER
     
 	# Embalse principal (Embalse 1)
     CLASS
+    	NAME 'Nombre embalse principal'
     	EXPRESSION ('[ID_TTOPO]'='031201') 
         LABEL
     		ENCODING 'ISO-8859-1'
@@ -1196,7 +1234,8 @@ LAYER
         END   
 	END
 	# Embalse restante (Embalse 2)
-    CLASS    
+    CLASS  
+    	name 'Nombre otros embalses'
     	EXPRESSION ('[ID_TTOPO]'='031202') 
         LABEL
     		ENCODING 'ISO-8859-1'
@@ -1212,6 +1251,7 @@ LAYER
 	END
 	# Lago principal (Lago 1)
     CLASS
+    	NAME 'Lago principal'
     	EXPRESSION ('[ID_TTOPO]'='031301') 
         LABEL
     		ENCODING 'ISO-8859-1'
@@ -1227,6 +1267,7 @@ LAYER
 	END    
 	# Lago restante (Lago 2)
     CLASS
+    	NAME 'Otros lagos'
     	EXPRESSION ('[ID_TTOPO]'='031302') 
         LABEL
     		ENCODING 'ISO-8859-1'
@@ -1269,6 +1310,7 @@ LAYER
     
 	# Capital de estado    
     CLASS
+    	NAME 'Capital de estado'
     	EXPRESSION ('[TIPO_0501]'='01') 
       	LABEL
     		
@@ -1291,6 +1333,7 @@ LAYER
     
 	# Capital de CCAA    
     CLASS
+    	NAME 'Capital de CCAA'
     	EXPRESSION ('[TIPO_0501]'='02') 
       	LABEL
     		PRIORITY 1
@@ -1313,6 +1356,7 @@ LAYER
 
 	# Capital de Provincia    
     CLASS
+    	NAME 'Capital de Provincia'
     	EXPRESSION ('[TIPO_0501]'='03') 
       	LABEL
     		PRIORITY 1
@@ -1335,6 +1379,7 @@ LAYER
 
 	# Capital de municipio > 50 000 hab.  "TIPO_0501"  =  '04' AND "POB_ENT_SI" > 50000    
     CLASS
+    	NAME 'Capital de municipio > 50 000 hab'
     	EXPRESSION ('[TIPO_0501]'='04' AND [POB_ENT_SI] > 50000) 
       	LABEL
     		PRIORITY 2
@@ -1352,6 +1397,7 @@ LAYER
 
 	# Capital de municipio de 10 000 - 50 000
     CLASS
+    	NAME ' Capital de municipio de 10 000 - 50 000 hab'
     	EXPRESSION ('[TIPO_0501]'='04' AND [POB_ENT_SI] > 10000 AND [POB_ENT_SI] <= 50000) 
       	LABEL
         	COLOR   0 0 0
@@ -1367,6 +1413,7 @@ LAYER
     
 	# Capital de municipio de 2 000 - 10 000
     CLASS
+    	NAME 'Capital de municipio de 2 000 - 10 000 hab'
     	EXPRESSION ('[TIPO_0501]'='04' AND [POB_ENT_SI] > 2000 AND [POB_ENT_SI] <= 10000) 
       	LABEL
     		PRIORITY 3
@@ -1384,6 +1431,7 @@ LAYER
     
 	# Capital de municipio < 2 000 hab
     CLASS
+    	NAME 'Capital de municipio de < 2 000 hab'
     	EXPRESSION ('[TIPO_0501]'='04' AND [POB_ENT_SI] <= 2000 ) 
       	LABEL
     		PRIORITY 4
