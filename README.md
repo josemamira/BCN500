@@ -25,3 +25,6 @@ Ejemplo de petición
 Resultado gráfico
 ![enter image description here](https://github.com/josemamira/BCN500/blob/master/qgis2.png)
 
+## Datos
+
+Este repositorio no contiene datos. Sí quieres utilizarlo debes descargarlo de la web del CNIG los shapefiles y colocarlos en la carpeta data
