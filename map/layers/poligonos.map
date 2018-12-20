@@ -53,6 +53,7 @@ LAYER
     
     
     CLASS
+    	NAME 'Delimitación provincia'
         STYLE  # no offset
             #PATTERN 10 10 END
             COLOR 0 0 0    # black
@@ -95,6 +96,7 @@ LAYER
     END    
     
     CLASS
+    	NAME 'Hidrografía poligonal'
     	STYLE
     		COLOR '#caecfb'
     		OUTLINECOLOR '#87daf7'
@@ -127,6 +129,7 @@ LAYER
     
     
     CLASS 
+    	NAME 'Parques naturales'
     	STYLE
     		COLOR '#4daf4a'
     		WIDTH 4
@@ -162,6 +165,7 @@ LAYER
     
     
     CLASS
+    	NAME '0-50'
     	EXPRESSION '0-50'
     	STYLE
     		COLOR '#e7f3fc'
@@ -178,6 +182,7 @@ LAYER
     	END
 	END
     CLASS
+		NAME '100-200'
     	EXPRESSION '100-200'
     	STYLE
     		COLOR '#bde6f7'
@@ -194,6 +199,7 @@ LAYER
     	END
 	END
     CLASS
+    	NAME '500-1000'
     	EXPRESSION '500-1000'
     	STYLE
     		COLOR '#a2daf4'
@@ -202,6 +208,7 @@ LAYER
     	END
 	END    
     CLASS
+    	NAME '1000-2000'
     	EXPRESSION '1000-2000'
     	STYLE
     		COLOR '#8ad2f1'
@@ -210,6 +217,7 @@ LAYER
     	END
 	END     
     CLASS
+    	NAME '2000-3000'
     	EXPRESSION '2000-3000'
     	STYLE
     		COLOR '#6bc4e7'
@@ -218,6 +226,7 @@ LAYER
     	END
 	END 
     CLASS
+    	NAME '3000-4000'
     	EXPRESSION '3000-4000'
     	STYLE
     		COLOR '#68bee1'
@@ -226,6 +235,7 @@ LAYER
     	END
 	END 
     CLASS
+    	NAME '4000-5000'
     	EXPRESSION '4000-5000'
     	STYLE
     		COLOR '#68bee1'
@@ -234,6 +244,7 @@ LAYER
     	END
 	END
     CLASS
+    	NAME '> 5000'
     	EXPRESSION '> 5000'
     	STYLE
     		COLOR '#64b8da'
@@ -267,6 +278,7 @@ LAYER
     END 
     
     CLASS
+    	NAME 'Zonas urbanas'
     	STYLE
     		COLOR '#ffcbe4'
     		OUTLINECOLOR '#e7b8ce'
