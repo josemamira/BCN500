@@ -1,0 +1,312 @@
+SYMBOL
+    name "circle"
+    TYPE ellipse
+    points 1 1 end
+    filled true
+END
+    
+#-----------------------------------------------
+#          Fuentes vectoriales
+#-----------------------------------------------
+SYMBOL
+  NAME "circulo"
+  TYPE ellipse
+  FILLED true
+  POINTS
+    10 10
+  END # POINTS
+END # SYMBOL
+
+SYMBOL
+  NAME "circulo2" #circulo sin relleno
+  TYPE ellipse
+  FILLED false
+  POINTS
+    10 10
+  END # POINTS
+END # SYMBOL
+# 1
+SYMBOL 
+  Name 'tent'
+  Type VECTOR
+  Filled TRUE
+  Points
+    0 1
+    .5 0
+    1 1
+    .75 1
+    .5 .5
+    .25 1
+    0 1
+ END
+END 
+
+#2
+SYMBOL
+  Name 'star'
+  Type VECTOR
+  Filled TRUE
+  Points
+    0 .375
+    .35 .375
+    .5 0
+    .65 .375
+    1 .375
+    .75 .625
+    .875 1
+    .5 .75
+    .125 1
+    .25 .625
+  END
+END 
+
+SYMBOL
+  Name 'star2' # Estrella sin relleno
+  Type VECTOR
+  Filled false
+  Points
+    0 .375
+    .35 .375
+    .5 0
+    .65 .375
+    1 .375
+    .75 .625
+    .875 1
+    .5 .75
+    .125 1
+    .25 .625
+    0 .375
+  END
+END 
+
+#3
+SYMBOL
+  Name 'triangle'
+  Type VECTOR
+  Filled TRUE
+  Points
+    0 1
+    .5 0
+    1 1
+    0 1
+  END
+END 
+    
+#3
+SYMBOL
+  Name 'triangle2'
+  Type VECTOR
+  Filled false
+  Points
+    0 1
+    .5 0
+    1 1
+    0 1
+  END
+END 
+#4
+SYMBOL
+  Name 'square'
+  Type VECTOR
+  Filled TRUE
+  Points
+    0 1
+    0 0
+    1 0
+    1 1
+    0 1
+  END
+END 
+
+SYMBOL
+  Name 'square2'
+  Type VECTOR
+  Filled False
+  Points
+    0 1
+    0 0
+    1 0
+    1 1
+    0 1
+  END
+END 
+
+#5
+SYMBOL
+  Name 'plus'
+  Type VECTOR
+  Points
+    .5 0
+    .5 1
+    -99 -99
+    0 .5
+    1 .5
+  END
+END 
+
+#6
+SYMBOL
+  Name 'cross'
+  Type VECTOR
+  Points
+    0 0
+    1 1
+    -99 -99
+    0 1
+    1 0
+  END
+END
+
+#rombo
+SYMBOL
+  Name 'rombo'
+  Type VECTOR
+  Filled TRUE
+  Points
+    0 .5
+    .5 0
+    1 .5
+    .5 1
+    0 .5
+  END
+END 
+
+SYMBOL
+  Name 'ffcc'
+  Type VECTOR
+  Points
+    .5 0
+    .5 1
+  END
+END     
+
+    
+    
+   
+    
+    
+#-----------------------------------------------
+#          iconos de imagenes (PNG)
+#-----------------------------------------------
+
+SYMBOL
+  NAME "ico1"
+  TYPE pixmap
+  IMAGE "../simbolos/img1.png"
+END 
+    
+    
+SYMBOL
+  NAME "ico2"
+  TYPE pixmap
+  IMAGE "../simbolos/img2.png"
+END 
+
+SYMBOL
+  NAME "ico3"
+  TYPE pixmap
+  IMAGE "../simbolos/img3.png"
+END 
+
+SYMBOL
+  NAME "ico4"
+  TYPE pixmap
+  IMAGE "../simbolos/img4.png"
+END 
+
+SYMBOL
+  NAME "ico5"
+  TYPE pixmap
+  IMAGE "../simbolos/img5.png"
+END 
+
+SYMBOL
+  NAME "ico6"
+  TYPE pixmap
+  IMAGE "../simbolos/img6.png"
+END 
+
+SYMBOL
+  NAME "ico7"
+  TYPE pixmap
+  IMAGE "../simbolos/img7.png"
+END 
+
+SYMBOL
+  NAME "ico8"
+  TYPE pixmap
+  IMAGE "../simbolos/img8.png"
+END 
+    
+    #-------------------------
+    # ICONOS DE FUENTES TRUETYPE
+    #---- clase nueva---------
+
+SYMBOL
+  NAME "letra_A_normal"
+  TYPE truetype
+  FONT "sc"
+  CHARACTER "A"
+END 
+
+SYMBOL
+  NAME "letra_a_sim"
+  TYPE truetype
+  FONT "simbolos"
+  CHARACTER "a"
+END
+
+SYMBOL #columna
+  NAME "letra_i_normal"
+  TYPE truetype
+  FONT "sc"
+  CHARACTER "i"
+END 
+
+SYMBOL #bici
+  NAME "letra_p_sim"
+  TYPE truetype
+  FONT "simbolos"
+  CHARACTER "p"
+END 
+
+
+    #-------------------------
+    # TRAMAS PARA POLIGONOS
+    #---- clase nueva---------
+
+SYMBOL
+  NAME "sombreado"
+  TYPE hatch
+END
+
+SYMBOL
+  NAME "pol-star"
+  TYPE PIXMAP
+  IMAGE "../simbolos/pol-star.png"
+  TRANSPARENT 8
+END
+
+
+SYMBOL
+  NAME "pol-circulos"
+  TYPE PIXMAP
+  IMAGE "../simbolos/pol-circulos.png"
+  TRANSPARENT 8
+END
+
+    #-------------------------
+    # ICONOS VECTORIALES SVG
+    #-------------------------   
+SYMBOL
+  NAME "puerto"
+  TYPE SVG
+  IMAGE "../simbolos/puerto.svg"
+END 
+    
+SYMBOL
+  NAME "aeropuerto"
+  TYPE SVG
+  IMAGE "../simbolos/aeropuerto.svg"
+END  
+    

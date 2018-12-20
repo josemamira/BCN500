@@ -1,0 +1,8 @@
+ORDER {
+ 1: default.map
+ 2: poligonos.map
+ 3: lineas.map
+ 4: viales.map
+ 5: puntos.map
+ 6: toponimos.map
+}
